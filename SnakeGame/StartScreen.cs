@@ -36,7 +36,8 @@ namespace SnakeGame
         private void Playbtn_Click(object sender, EventArgs e)
         {
 
-            
+            this.Hide();
+            Program.gamescreen.Show();
 
         }
 

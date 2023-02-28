@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="GameOverScreen.cs">
       <SubType>Form</SubType>
@@ -88,6 +89,7 @@
     <Compile Include="LeaderboardScreen.Designer.cs">
       <DependentUpon>LeaderboardScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SnakeData.cs" />
     <Compile Include="StartScreen.cs">
       <SubType>Form</SubType>
