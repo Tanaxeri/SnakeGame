@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameScreen));
             this.Scorelbl = new System.Windows.Forms.Label();
             this.Gamepan = new System.Windows.Forms.Panel();
             this.foodlbl = new System.Windows.Forms.Label();
+            this.GameTimer = new System.Windows.Forms.Timer(this.components);
             this.Gamepan.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,10 @@
             this.foodlbl.Size = new System.Drawing.Size(21, 21);
             this.foodlbl.TabIndex = 1;
             // 
+            // GameTimer
+            // 
+            this.GameTimer.Interval = 1000;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -85,5 +91,6 @@
         private System.Windows.Forms.Label Scorelbl;
         private System.Windows.Forms.Panel Gamepan;
         private System.Windows.Forms.Label foodlbl;
+        private System.Windows.Forms.Timer GameTimer;
     }
 }

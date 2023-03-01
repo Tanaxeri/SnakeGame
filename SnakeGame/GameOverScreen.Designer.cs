@@ -63,6 +63,7 @@
             this.Savebtn.TabIndex = 2;
             this.Savebtn.Text = "Save";
             this.Savebtn.UseVisualStyleBackColor = true;
+            this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
             // GameOverlbl
             // 
@@ -82,6 +83,7 @@
             this.PlayAgainbtn.TabIndex = 4;
             this.PlayAgainbtn.Text = "Play Again";
             this.PlayAgainbtn.UseVisualStyleBackColor = true;
+            this.PlayAgainbtn.Click += new System.EventHandler(this.PlayAgainbtn_Click);
             // 
             // ReturntoTSbtn
             // 
@@ -91,6 +93,7 @@
             this.ReturntoTSbtn.TabIndex = 5;
             this.ReturntoTSbtn.Text = "Return to Title Screen";
             this.ReturntoTSbtn.UseVisualStyleBackColor = true;
+            this.ReturntoTSbtn.Click += new System.EventHandler(this.ReturntoTSbtn_Click);
             // 
             // GameOverScreen
             // 
@@ -109,6 +112,7 @@
             this.Name = "GameOverScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake Game";
+            this.Load += new System.EventHandler(this.GameOverScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
