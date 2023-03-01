@@ -13,7 +13,7 @@ namespace SnakeGame
 {
     public partial class GameScreen : Form
     {
-        private List<Circle> Snake = new List<Circle>();
+       /* private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
         int maxWidth;
@@ -90,6 +90,6 @@ namespace SnakeGame
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
             gameTimer.Start();
         }
-
+       */
     }
 }
