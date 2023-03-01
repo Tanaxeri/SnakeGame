@@ -15,6 +15,7 @@ namespace SnakeGame
         public LeaderboardScreen()
         {
             InitializeComponent();
+            this.FormClosing += new FormClosingEventHandler(LeaderboardScreen_FormClosing);
         }
 
         private void LeaderboardScreen_Load(object sender, EventArgs e)
@@ -28,11 +29,17 @@ namespace SnakeGame
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {
             //bezárjuk a "LeaderboardScreen" formot és mutatjuk a "StartScreen" formot.
-            this.Close();
+            this.Hide();
             Program.startscreen.Show();
 
         }
 
+        private void LeaderboardScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            Application.Exit();
+
+        }
 
     }
 }

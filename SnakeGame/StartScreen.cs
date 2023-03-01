@@ -39,25 +39,22 @@ namespace SnakeGame
             string playerName = "";
 
             using (var dialog = new NameDialog())
-            {               
+            {
+                var regex = new Regex("^[a-zA-Z0-9]*$");
+                if (!regex.IsMatch(playerName))
+                {
 
+                    MessageBox.Show("A játékos névbe csak számok és betűk lehetnek!(Player name can only contain numbers and letters!)", "Hiba!");
+                    return;
+
+                }
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    playerName = dialog.PlayerName;
-                    var regex = new Regex("^[a-zA-Z0-9]*$");
-                    if (!regex.IsMatch(playerName))
-                    {
 
-                        MessageBox.Show("A játékos névbe csak számok és betűk lehetnek!(Player name can only contain numbers and letters!)", "Hiba!");
-                        return;
-
-                    }
-                    else
-                    {
-                        this.Hide();
-                        Program.gamescreen.Show();     
-
-                    }
+                    playerName = dialog.PlayerName;                    
+                    this.Hide();
+                    Program.gamescreen.Show();
+                    Program.gamescreen.RestartGame();
 
                 }
                 else

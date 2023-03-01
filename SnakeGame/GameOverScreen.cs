@@ -15,6 +15,7 @@ namespace SnakeGame
         public GameOverScreen()
         {
             InitializeComponent();
+            this.FormClosing += new FormClosingEventHandler(GameOverScreen_FormClosing);
         }
 
         private void Savebtn_Click(object sender, EventArgs e)
@@ -26,7 +27,7 @@ namespace SnakeGame
 
         private void PlayAgainbtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
             Program.gamescreen.RestartGame();
 
         }
@@ -34,8 +35,9 @@ namespace SnakeGame
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {
 
-            //bezárjuk a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
-            this.Close();
+            //Elrejtjük a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
+            this.Hide();
+            Program.gamescreen.Hide();
             Program.startscreen.Show();
 
         }
@@ -47,5 +49,13 @@ namespace SnakeGame
             //FinalLevellbl.Text = "Final Level: " + ;
 
         }
+
+        private void GameOverScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            Application.Exit();
+
+        }
+
     }
 }

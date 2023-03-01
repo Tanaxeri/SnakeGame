@@ -37,38 +37,38 @@ namespace SnakeGame
         
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left && Settings.directions != "right")
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A && Settings.directions != "right")
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.Right && Settings.directions != "left")
+            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D && Settings.directions != "left")
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.Up && Settings.directions != "down")
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W && Settings.directions != "down")
             {
                 goUp = true;
             }
-            if (e.KeyCode == Keys.Down && Settings.directions != "up")
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S && Settings.directions != "up")
             {
                 goDown = true;
             }
         }
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 goLeft = false;
             }
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
                 goRight = false;
             }
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
                 goUp = false;
             }
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
                 goDown = false;
             }
@@ -147,10 +147,30 @@ namespace SnakeGame
                     Snake[i].Y = Snake[i - 1].Y;
                 }
             }
-            Gamepan.Invalidate();
+            gamezone.Invalidate();
         }
-        private void UpdatePictureBoxGraphics(object sender, PaintEventArgs e)
+
+        public void RestartGame()
         {
+            maxWidth = gamezone.Width / Settings.Width - 1;
+            maxHeight = gamezone.Height / Settings.Height - 1;
+            Snake.Clear();
+            score = 0;
+            Scorelbl.Text = "Score: " + score;
+            Circle head = new Circle { X = 10, Y = 5 };
+            Snake.Add(head); // A snake fejét hozzáadjuk a listához
+            for (int i = 0; i < 100; i++)
+            {
+                Circle body = new Circle();
+                Snake.Add(body);
+            }
+            food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            GameTimer.Start();
+        }
+
+        private void UpdateGameGraphics(object sender, PaintEventArgs e)
+        {
+
             Graphics canvas = e.Graphics;
             Brush snakeColour;
             for (int i = 0; i < Snake.Count; i++)
@@ -176,24 +196,7 @@ namespace SnakeGame
             food.Y * Settings.Height,
             Settings.Width, Settings.Height
             ));
-        }
 
-        public void RestartGame()
-        {
-            maxWidth = Gamepan.Width / Settings.Width - 1;
-            maxHeight = Gamepan.Height / Settings.Height - 1;
-            Snake.Clear();
-            score = 0;
-            Scorelbl.Text = "Score: " + score;
-            Circle head = new Circle { X = 10, Y = 5 };
-            Snake.Add(head); // A snake fejét hozzáadjuk a listához
-            for (int i = 0; i < 100; i++)
-            {
-                Circle body = new Circle();
-                Snake.Add(body);
-            }
-            food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            GameTimer.Start();
         }
 
         private void EatFood()
@@ -222,5 +225,6 @@ namespace SnakeGame
             Application.Exit();
 
         }
+
     }
 }
