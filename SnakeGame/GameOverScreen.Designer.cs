@@ -112,6 +112,7 @@
             this.Name = "GameOverScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameOverScreen_FormClosing);
             this.Load += new System.EventHandler(this.GameOverScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

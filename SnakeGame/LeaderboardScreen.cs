@@ -15,7 +15,7 @@ namespace SnakeGame
         public LeaderboardScreen()
         {
             InitializeComponent();
-            this.FormClosing += new FormClosingEventHandler(LeaderboardScreen_FormClosing);
+            this.FormClosing += LeaderboardScreen_FormClosing;
         }
 
         private void LeaderboardScreen_Load(object sender, EventArgs e)
@@ -37,7 +37,20 @@ namespace SnakeGame
         private void LeaderboardScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            Application.Exit();
+                //Megjelenít egy üzenetet ami megkérdi, hogy beakarja-e zárni
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+
+                    e.Cancel = false;
+
+                }
+                else if(result == DialogResult.No)
+                {
+
+                    e.Cancel = true;
+
+                }  
 
         }
 

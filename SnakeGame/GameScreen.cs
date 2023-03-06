@@ -17,6 +17,7 @@ namespace SnakeGame
 
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
+        private Circle obstacle = new Circle();
 
         int maxWidth;
         int maxHeight;
@@ -34,26 +35,26 @@ namespace SnakeGame
         public GameScreen()
         {
             InitializeComponent();
-            this.FormClosing += new FormClosingEventHandler(GameScreen_FormClosing);
+            this.FormClosing += GameScreen_FormClosing;
             new Settings();
 
         }
         
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A && Settings.directions != "right")
+            if (e.KeyCode == Keys.Left && Settings.directions != "right" || e.KeyCode == Keys.A && Settings.directions != "right")
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D && Settings.directions != "left")
+            if (e.KeyCode == Keys.Right && Settings.directions != "left" || e.KeyCode == Keys.D && Settings.directions != "left")
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W && Settings.directions != "down")
+            if (e.KeyCode == Keys.Up && Settings.directions != "down" || e.KeyCode == Keys.W && Settings.directions != "down")
             {
                 goUp = true;
             }
-            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S && Settings.directions != "up")
+            if (e.KeyCode == Keys.Down && Settings.directions != "up" || e.KeyCode == Keys.S && Settings.directions != "up")
             {
                 goDown = true;
             }
@@ -171,6 +172,7 @@ namespace SnakeGame
                 Snake.Add(body);
             }
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+            obstacle = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
             GameTimer.Start();
         }
 
@@ -229,7 +231,23 @@ namespace SnakeGame
         private void GameScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+            GameTimer.Stop();
             GameTimer.Dispose();
+            //Megjelenít egy üzenetet ami megkérdi, hogy beakarja-e zárni
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+
+                e.Cancel = false;
+
+            }
+            else if (result == DialogResult.No)
+            {
+
+                GameTimer.Start();
+                e.Cancel = true;
+
+            }
 
         }
 

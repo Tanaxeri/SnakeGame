@@ -76,6 +76,7 @@
             this.Name = "LeaderboardScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake Game";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LeaderboardScreen_FormClosing);
             this.Load += new System.EventHandler(this.LeaderboardScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
