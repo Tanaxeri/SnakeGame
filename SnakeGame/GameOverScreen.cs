@@ -4,30 +4,36 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SnakeGame
 {
     public partial class GameOverScreen : Form
     {
+
         public GameOverScreen()
         {
+
             InitializeComponent();
             this.FormClosing += new FormClosingEventHandler(GameOverScreen_FormClosing);
+
         }
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
+            Program.database.Save();
 
-           
-
+            this.Close();
         }
 
         private void PlayAgainbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
+            Program.gamescreen.Show();
             Program.gamescreen.RestartGame();
 
         }
@@ -35,9 +41,9 @@ namespace SnakeGame
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {
 
-            //Elrejtjük a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
-            this.Hide();
-            Program.gamescreen.Hide();
+            //Bezárjuk a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
+            this.Close();
+            Program.gamescreen.Close();
             Program.startscreen.Show();
 
         }

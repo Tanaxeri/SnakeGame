@@ -16,13 +16,12 @@ namespace SnakeGame
         public StartScreen()
         {
             InitializeComponent();
-            this.FormClosing += new FormClosingEventHandler(StartScreen_FormClosing);
         }
 
         private void Leaderboardbtn_Click(object sender, EventArgs e)
         {
-            //Elrejtük a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
-            this.Hide();
+            //Elrejtjük a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
+            this.Close();
             Program.leaderboardscreen.Show();
 
         }
@@ -36,42 +35,23 @@ namespace SnakeGame
 
         private void Playbtn_Click(object sender, EventArgs e)
         {
-            string playerName = "";
-
             using (var dialog = new NameDialog())
             {
-                var regex = new Regex("^[a-zA-Z0-9]*$");
-                if (!regex.IsMatch(playerName))
-                {
-
-                    MessageBox.Show("A játékos névbe csak számok és betűk lehetnek!(Player name can only contain numbers and letters!)", "Hiba!");
-                    return;
-
-                }
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
+                    var playerName = dialog.PlayerName;
+                    if (string.IsNullOrEmpty(playerName) || !Regex.IsMatch(playerName, "^[a-zA-Z0-9]*$"))
+                    {
+                        MessageBox.Show("A játékos névbe csak számok és betűk lehetnek! (Player name can only contain numbers and letters!)", "Hiba!");
+                        return;
+                    }
 
-                    playerName = dialog.PlayerName;                    
-                    this.Hide();
+                    Program.gamescreen.PlayerName = playerName;
                     Program.gamescreen.Show();
                     Program.gamescreen.RestartGame();
-
+                    this.Hide();
                 }
-                else
-                {
-
-                    return;
-
-                }
-
             }
-
-        }
-
-        private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-            Application.Exit();
 
         }
 

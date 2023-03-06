@@ -116,5 +116,34 @@ namespace SnakeGame
             return leaderboard;
         }
 
+        public bool Save()
+        {
+
+            if(databaseOpen()) 
+            {
+               string playerName = Program.gamescreen.PlayerName;
+               int score = Program.gamescreen.highScore;
+               DateTime datePlayed = DateTime.Now;
+               sqlcommand = new MySqlCommand("INSERT INTO playerscores (PlayerName, Score, Date) VALUES (@PlayerName, @Score, @DatePlayed)");
+               sqlcommand.Parameters.Clear();
+               sqlcommand.Parameters.AddWithValue("@PlayerName", playerName);
+               sqlcommand.Parameters.AddWithValue("@Score", score);
+               sqlcommand.Parameters.AddWithValue("@DatePlayed", datePlayed);
+               
+
+            }
+            else
+            {
+
+                MessageBox.Show(errorMessage);
+                return false;
+
+            }
+            //bezárjuk a kapcsolatot.
+            databaseClose();
+
+            return true;
+        }
+
     }
 }

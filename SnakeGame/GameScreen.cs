@@ -14,12 +14,14 @@ namespace SnakeGame
 {
     public partial class GameScreen : Form
     {
+
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
         int maxWidth;
         int maxHeight;
 
+        public string PlayerName { get; set; }
         int score;
         public int highScore;
 
@@ -222,7 +224,7 @@ namespace SnakeGame
         private void GameScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            Application.Exit();
+            GameTimer.Dispose();
 
         }
 

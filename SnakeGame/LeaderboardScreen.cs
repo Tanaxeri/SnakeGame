@@ -29,7 +29,7 @@ namespace SnakeGame
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {
             //bezárjuk a "LeaderboardScreen" formot és mutatjuk a "StartScreen" formot.
-            this.Hide();
+            this.Close();
             Program.startscreen.Show();
 
         }
