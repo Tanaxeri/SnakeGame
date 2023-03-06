@@ -25,7 +25,7 @@ namespace SnakeGame
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
-            Program.database.Save();
+            Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
 
             this.Close();
         }
@@ -52,7 +52,7 @@ namespace SnakeGame
         {
 
             FinalScorelbl.Text = "Final Score: " + Program.gamescreen.highScore;
-            //FinalLevellbl.Text = "Final Level: " + ;
+            FinalLevellbl.Text = "Final Level: " + Program.gamescreen.Finallevel;
 
         }
 

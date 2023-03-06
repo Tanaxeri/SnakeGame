@@ -82,7 +82,7 @@ namespace SnakeGame
             //felveszünk egy string típusú változót.
             string leaderboard = "";
             //Lefutattjuk hogy az adatbázisból vegye ki a top 10, játékos nevét, eredményét és hogy melyik szintet érte el.
-            sqlcommand = new MySqlCommand("SELECT PlayerName, Score, Level FROM playerscores ORDER BY Score DESC LIMIT 10", sqlconnection);
+            sqlcommand = new MySqlCommand("SELECT `PlayerName`, `Score`, `Level` FROM `playerscores` ORDER BY `Score` DESC LIMIT 10", sqlconnection);
             //ellenőrizzük hogy nyitva van-e a kapcsolat és ha igen akkor lefut.
             if (databaseOpen())
             {
@@ -116,21 +116,41 @@ namespace SnakeGame
             return leaderboard;
         }
 
-        public bool Save()
+        public bool Save(string playerName, int score, int level, DateTime datePlayed)
         {
 
-            if(databaseOpen()) 
-            {
-               string playerName = Program.gamescreen.PlayerName;
-               int score = Program.gamescreen.highScore;
-               DateTime datePlayed = DateTime.Now;
-               sqlcommand = new MySqlCommand("INSERT INTO playerscores (PlayerName, Score, Date) VALUES (@PlayerName, @Score, @DatePlayed)");
+            if (databaseOpen()) 
+            { 
+                           
+               sqlcommand = new MySqlCommand("INSERT INTO `playerscores` (`ID`, `PlayerName`, `Score`, `Level`, `Date`) VALUES (NULL, @playerName, @score, @level, @datePlayed)", sqlconnection);
                sqlcommand.Parameters.Clear();
-               sqlcommand.Parameters.AddWithValue("@PlayerName", playerName);
-               sqlcommand.Parameters.AddWithValue("@Score", score);
-               sqlcommand.Parameters.AddWithValue("@DatePlayed", datePlayed);
-               
+               sqlcommand.Parameters.AddWithValue("@playerName", playerName);
+               sqlcommand.Parameters.AddWithValue("@score", score);
+               sqlcommand.Parameters.AddWithValue("@level", level);
+               sqlcommand.Parameters.AddWithValue("@datePlayed", datePlayed);
+                try { 
+                    if (sqlcommand.ExecuteNonQuery() == 1)
+                    {
 
+                        MessageBox.Show("Adatot sikeresen rögzítettük!", "Sikeres!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        return true;
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Adatot nem sikerült rögzíteni!", "Sikertelen!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+
+                    }
+                }
+                catch(MySqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Sikertelen!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+
+                }
             }
             else
             {
@@ -139,6 +159,7 @@ namespace SnakeGame
                 return false;
 
             }
+
             //bezárjuk a kapcsolatot.
             databaseClose();
 

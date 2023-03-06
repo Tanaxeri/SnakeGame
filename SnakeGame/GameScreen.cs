@@ -23,7 +23,9 @@ namespace SnakeGame
 
         public string PlayerName { get; set; }
         int score;
+        int level;
         public int highScore;
+        public int Finallevel;
 
         Random rand = new Random();
 
@@ -217,6 +219,7 @@ namespace SnakeGame
         {
             GameTimer.Stop();
             highScore = score;
+            Finallevel = level;
             Program.gameoverscreen.ShowDialog();
 
         }
