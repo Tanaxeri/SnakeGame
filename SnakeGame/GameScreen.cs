@@ -160,7 +160,9 @@ namespace SnakeGame
             maxHeight = gamezone.Height / Settings.Height - 1;
             Snake.Clear();
             score = 0;
+            level = 0;
             Scorelbl.Text = "Score: " + score;
+            Levellbl.Text = "Level " + level;
             Circle head = new Circle { X = 10, Y = 5 };
             Snake.Add(head); // A snake fejét hozzáadjuk a listához
             for (int i = 0; i < 100; i++)
