@@ -157,9 +157,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SNAKE ALKALMAZÁS VÉDŐ.pptx" />
     <None Include="Snake alkalmazás.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Snake alkalmazás.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
