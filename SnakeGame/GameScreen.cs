@@ -159,13 +159,13 @@ namespace SnakeGame
                     }
                 }
 
-                if (score % 10 == 0 && score > 0 && score > level * 10)
+                if (score % 5 == 0 && score > 0 && score > level * 5)
                 {
                     level++;
                     Levellbl.Text = "Level " + level;
 
                     // Létrehoz új akadályokat, ha a pontszám 10 vagy ha a pontszám 10 többszöröse.
-                    if (score == 10 || score % 10 == 0)
+                    if (score == 5 || score % 5 == 0)
                     {
                         CreateObstacle();
                     }
@@ -264,6 +264,7 @@ namespace SnakeGame
         private void GameOver()
         {
             GameTimer.Stop();
+            GameTimer.Dispose();
             highScore = score;
             Finallevel = level;
             Program.gameoverscreen.ShowDialog();

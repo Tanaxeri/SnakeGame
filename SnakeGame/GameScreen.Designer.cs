@@ -52,6 +52,7 @@
             // 
             // gamezone
             // 
+            this.gamezone.BackColor = System.Drawing.Color.DarkGray;
             this.gamezone.Location = new System.Drawing.Point(31, 30);
             this.gamezone.Name = "gamezone";
             this.gamezone.Size = new System.Drawing.Size(1234, 601);

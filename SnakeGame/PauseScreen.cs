@@ -21,7 +21,7 @@ namespace SnakeGame
 
         private void Returnbtn_Click(object sender, EventArgs e)
         {
-
+            userConfirmedClosing = true;
             this.Close();
             Program.gamescreen.GameTimer.Start();
 
