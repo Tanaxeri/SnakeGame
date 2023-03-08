@@ -17,7 +17,7 @@ namespace SnakeGame
     {
 
         private bool userConfirmedClosing = false;
-
+        private bool gameOverScreenShown = false;
 
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
@@ -141,34 +141,6 @@ namespace SnakeGame
                     {
                         EatFood();
                     }
-                    for (int j = 1; j < Snake.Count; j++)
-                    {
-                        if (Snake[i].X == Snake[j].X && Snake[i].Y == Snake[j].Y)
-                        {
-                            GameOver();
-                        }
-                    }
-                }
-
-                // Ellenőrzi, hogy a 'Snake' ütközik-e valamelyik akadállyal.
-                foreach (var obs in obstacles)
-                {
-                    if (obs != null && Snake[0].X == obs.X && Snake[0].Y == obs.Y)
-                    {
-                        GameOver();
-                    }
-                }
-
-                if (score % 5 == 0 && score > 0 && score > level * 5)
-                {
-                    level++;
-                    Levellbl.Text = "Level " + level;
-
-                    // Létrehoz új akadályokat, ha a pontszám 10 vagy ha a pontszám 10 többszöröse.
-                    if (score == 5 || score % 5 == 0)
-                    {
-                        CreateObstacle();
-                    }
                 }
 
                 if (i > 0)
@@ -177,6 +149,28 @@ namespace SnakeGame
                     Snake[i].Y = Snake[i - 1].Y;
                 }
             }
+
+            // Ellenőrzi, hogy a 'Snake' ütközik-e valamelyik akadállyal.
+            foreach (var obs in obstacles)
+            {
+                if (obs != null && Snake[0].X == obs.X && Snake[0].Y == obs.Y)
+                {
+                    GameOver();
+                }
+            }
+
+            if (score % 5 == 0 && score > 0 && score > level * 5)
+            {
+                level++;
+                Levellbl.Text = "Level " + level;
+
+                // Létrehoz új akadályokat, ha a pontszám 10 vagy ha a pontszám 10 többszöröse.
+                if (score == 5 || score % 5 == 0)
+                {
+                    CreateObstacle();
+                }
+            }
+
             gamezone.Invalidate();
         }
 
@@ -191,15 +185,19 @@ namespace SnakeGame
             maxWidth = gamezone.Width / Settings.Width - 1;
             maxHeight = gamezone.Height / Settings.Height - 1;
             Snake.Clear();
+            obstacles.Clear();
             score = 0;
             level = 1;
             Scorelbl.Text = "Score: " + score;
             Levellbl.Text = "Level " + level;
 
+            int middleX = maxWidth / 2;
+            int middleY = maxHeight / 2;
+
             // Hozzáad 4 kört a fej és 3 testrész ábrázolására
             for (int i = 0; i < 4; i++)
             {
-                Circle circle = new Circle { X = 10 - i, Y = 5 };
+                Circle circle = new Circle { X = middleX - i, Y = middleY };
                 Snake.Add(circle);
             }
 
@@ -263,11 +261,12 @@ namespace SnakeGame
         }
         private void GameOver()
         {
-            GameTimer.Stop();
-            GameTimer.Dispose();
-            highScore = score;
-            Finallevel = level;
-            Program.gameoverscreen.ShowDialog();
+
+           GameTimer.Stop();
+           GameTimer.Dispose();
+           highScore = score;
+           Finallevel = level;
+           Program.gameoverscreen.ShowDialog();
 
         }
 
