@@ -92,6 +92,7 @@
             this.Name = "PauseScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pause";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PauseScreen_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

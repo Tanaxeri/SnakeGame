@@ -19,15 +19,20 @@ namespace SnakeGame
         public StartScreen()
         {
             InitializeComponent();
-            this.FormClosing += StartScreen_FormClosing;
+            this.Shown += StartScreen_Shown;
+        }
+
+        private void StartScreen_Shown(object sender, EventArgs e)
+        {
+            userConfirmedClosing = false; // reset userConfirmedClosing flag
         }
 
         private void Leaderboardbtn_Click(object sender, EventArgs e)
         {
             //Elrejtük a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
-            userConfirmedClosing = true;
-            this.Hide();
             Program.leaderboardscreen.Show();
+            userConfirmedClosing = true;
+            this.Hide();          
 
         }
 
@@ -50,7 +55,8 @@ namespace SnakeGame
                     Program.gamescreen.Show();
                     Program.gamescreen.RestartGame();
                     userConfirmedClosing = true;
-                    this.Hide();
+                    this.Hide();                
+
                 }
             }
 
@@ -58,22 +64,28 @@ namespace SnakeGame
 
         private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
             {
                 e.Cancel = true;
 
                 using (var dialog = new CloseScreen())
                 {
-                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    this.FormClosing -= StartScreen_FormClosing; // remove event handler
+                    var result = dialog.ShowDialog();
+                    if (result == DialogResult.Yes)
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
                     }
+                    else if (result == DialogResult.No)
+                    {
+                        userConfirmedClosing = false;
+                    }
+                    this.FormClosing += StartScreen_FormClosing; // re-add event handler
                 }
             }
-
         }
+
 
     }
 }

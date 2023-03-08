@@ -16,7 +16,12 @@ namespace SnakeGame
         public PauseScreen()
         {
             InitializeComponent();
-            this.FormClosing += PauseScreen_FormClosing;
+            this.Shown += PauseScreen_Shown;
+        }
+
+        private void PauseScreen_Shown(object sender, EventArgs e)
+        {
+            userConfirmedClosing = false; // reset userConfirmedClosing flag
         }
 
         private void Returnbtn_Click(object sender, EventArgs e)
@@ -29,11 +34,10 @@ namespace SnakeGame
 
         private void Restartbtn_Click(object sender, EventArgs e)
         {
-
-            userConfirmedClosing = true;
-            this.Close();
-            Program.gamescreen.Show();
+           
             Program.gamescreen.RestartGame();
+            userConfirmedClosing = true;
+            this.Close();            
 
         }
 
@@ -41,10 +45,10 @@ namespace SnakeGame
         {
 
             //Bezárjuk a "PauseScreen" formot és mutatjuk a "StartScreen" formot.
-            userConfirmedClosing = true;
-            this.Close();
             Program.gamescreen.Hide();
             Program.startscreen.Show();
+            userConfirmedClosing = true;
+            this.Close();
 
         }
 
@@ -57,18 +61,18 @@ namespace SnakeGame
 
                 using (var dialog = new CloseScreen())
                 {
-                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    this.FormClosing -= PauseScreen_FormClosing; // remove event handler
+                    var result = dialog.ShowDialog();
+                    if (result == DialogResult.Yes)
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
                     }
-                    if (dialog.ShowDialog() == DialogResult.No)
+                    else if (result == DialogResult.No)
                     {
-
                         userConfirmedClosing = false;
-                        e.Cancel = true;
-
                     }
+                    this.FormClosing += PauseScreen_FormClosing; // re-add event handler
                 }
             }
 

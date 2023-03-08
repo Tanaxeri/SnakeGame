@@ -32,5 +32,6 @@ namespace SnakeGame
             this.Close();
 
         }
+
     }
 }

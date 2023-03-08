@@ -17,7 +17,6 @@ namespace SnakeGame
     {
 
         private bool userConfirmedClosing = false;
-        private bool gameOverScreenShown = false;
 
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
@@ -39,11 +38,16 @@ namespace SnakeGame
         public GameScreen()
         {
             InitializeComponent();
-            this.FormClosing += GameScreen_FormClosing;
             new Settings();
+            this.Shown += GameScreen_Shown;
 
         }
-        
+
+        private void GameScreen_Shown(object sender, EventArgs e)
+        {
+            userConfirmedClosing = false; // reset userConfirmedClosing flag
+        }
+
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
 
@@ -278,23 +282,23 @@ namespace SnakeGame
 
             if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
             {
-                e.Cancel = true;                
+                e.Cancel = true;
 
                 using (var dialog = new CloseScreen())
                 {
-                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    this.FormClosing -= GameScreen_FormClosing; // remove event handler
+                    var result = dialog.ShowDialog();
+                    if (result == DialogResult.Yes)
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
                     }
-                    if(dialog.ShowDialog() == DialogResult.No)
+                    else if (result == DialogResult.No)
                     {
-
                         userConfirmedClosing = false;
-                        e.Cancel = true;
                         GameTimer.Start();
-
                     }
+                    this.FormClosing += GameScreen_FormClosing; // re-add event handler
                 }
             }
 

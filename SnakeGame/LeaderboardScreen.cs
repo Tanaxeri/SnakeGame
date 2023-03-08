@@ -18,7 +18,12 @@ namespace SnakeGame
         public LeaderboardScreen()
         {
             InitializeComponent();
-            this.FormClosing += LeaderboardScreen_FormClosing;
+            this.Shown += LeaderboardScreen_Shown;
+        }
+
+        private void LeaderboardScreen_Shown(object sender, EventArgs e)
+        {
+            userConfirmedClosing = false; // reset userConfirmedClosing flag
         }
 
         private void LeaderboardScreen_Load(object sender, EventArgs e)
@@ -32,30 +37,36 @@ namespace SnakeGame
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {
             //Elrejtük a "LeaderboardScreen" formot és mutatjuk a "StartScreen" formot.
+            Program.startscreen.Show();
             userConfirmedClosing = true;
             this.Hide();
-            Program.startscreen.Show();
 
         }
 
         private void LeaderboardScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-
             if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
             {
                 e.Cancel = true;
 
                 using (var dialog = new CloseScreen())
                 {
-                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    this.FormClosing -= LeaderboardScreen_FormClosing; // remove event handler
+                    var result = dialog.ShowDialog();
+                    if (result == DialogResult.Yes)
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
                     }
+                    else if (result == DialogResult.No)
+                    {
+                        userConfirmedClosing = false;
+                    }
+                    this.FormClosing += LeaderboardScreen_FormClosing; // re-add event handler
                 }
             }
-
         }
+
 
     }
 }

@@ -19,29 +19,32 @@ namespace SnakeGame
 
         public GameOverScreen()
         {
-
             InitializeComponent();
-            this.FormClosing += GameOverScreen_FormClosing;
+            this.Shown += GameOverScreen_Shown;
+        }
 
+        private void GameOverScreen_Shown(object sender, EventArgs e)
+        {
+            userConfirmedClosing = false; // reset userConfirmedClosing flag
         }
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
 
             Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
-            userConfirmedClosing = true;
-            this.Close();
             Program.gamescreen.Hide();
             Program.startscreen.Show();
+            userConfirmedClosing = true;
+            this.Close();
 
         }
 
         private void PlayAgainbtn_Click(object sender, EventArgs e)
         {
+
+            Program.gamescreen.RestartGame();
             userConfirmedClosing = true;
             this.Close();
-            Program.gamescreen.Show();
-            Program.gamescreen.RestartGame();
 
         }
 
@@ -49,10 +52,10 @@ namespace SnakeGame
         {
 
             //Bezárjuk a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
-            userConfirmedClosing = true;
-            this.Close();
             Program.gamescreen.Hide();
             Program.startscreen.Show();
+            userConfirmedClosing = true;
+            this.Close();
 
         }
 
@@ -73,18 +76,18 @@ namespace SnakeGame
 
                 using (var dialog = new CloseScreen())
                 {
-                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    this.FormClosing -= GameOverScreen_FormClosing; // remove event handler
+                    var result = dialog.ShowDialog();
+                    if (result == DialogResult.Yes)
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
                     }
-                    if (dialog.ShowDialog() == DialogResult.No)
+                    else if (result == DialogResult.No)
                     {
-
                         userConfirmedClosing = false;
-                        e.Cancel = true;
-
                     }
+                    this.FormClosing += GameOverScreen_FormClosing; // re-add event handler
                 }
             }
 
