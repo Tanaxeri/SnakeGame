@@ -24,6 +24,7 @@ namespace SnakeGame
             gamescreen = new GameScreen();
             leaderboardscreen = new LeaderboardScreen();
             startscreen = new StartScreen();
+
             Application.Run(startscreen);
         }
     }

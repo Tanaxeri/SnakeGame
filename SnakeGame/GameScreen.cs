@@ -15,6 +15,9 @@ namespace SnakeGame
     public partial class GameScreen : Form
     {
 
+        private bool userConfirmedClosing = false;
+
+
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
         private Circle obstacle = new Circle();
@@ -81,7 +84,7 @@ namespace SnakeGame
 
         private void GameTimerEvent(object sender, EventArgs e)
         {
-            // irányok beállítása
+            // irányok beállítása.
             if (goLeft)
             {
                 Settings.directions = "left";
@@ -98,7 +101,7 @@ namespace SnakeGame
             {
                 Settings.directions = "up";
             }
-            // írányok vége
+            // írányok vége.
             for (int i = Snake.Count - 1; i >= 0; i--)
             {
                 if (i == 0)
@@ -118,21 +121,9 @@ namespace SnakeGame
                             Snake[i].Y--;
                             break;
                     }
-                    if (Snake[i].X < 0)
+                    if (Snake[i].X < 0 || Snake[i].X > maxWidth || Snake[i].Y < 0 || Snake[i].Y > maxHeight)
                     {
-                        Snake[i].X = maxWidth;
-                    }
-                    if (Snake[i].X > maxWidth)
-                    {
-                        Snake[i].X = 0;
-                    }
-                    if (Snake[i].Y < 0)
-                    {
-                        Snake[i].Y = maxHeight;
-                    }
-                    if (Snake[i].Y > maxHeight)
-                    {
-                        Snake[i].Y = 0;
+                        GameOver();
                     }
                     if (Snake[i].X == food.X && Snake[i].Y == food.Y)
                     {
@@ -146,7 +137,27 @@ namespace SnakeGame
                         }
                     }
                 }
-                else
+                // Növeli a szintet és akadályokat add.
+                if (score >= 10 && rand.Next(100) < level * 10)
+                {
+                    // Lehív egy adályt.
+                    obstacle.X = rand.Next(2, maxWidth);
+                    obstacle.Y = rand.Next(2, maxHeight);
+                }
+
+                // Megnézi hogy ütközik-e a Snake az akadállyal.
+                if (Snake[0].X == obstacle.X && Snake[0].Y == obstacle.Y)
+                {
+                    GameOver();
+                }
+
+                // Megnöveli a szintet minden 10 pontnál
+                if (score % 10 == 0 && score > 0 && score % 10 == level * 10)
+                {
+                    level = score;
+                    Levellbl.Text = "Level " + level;
+                }
+                if (i > 0)
                 {
                     Snake[i].X = Snake[i - 1].X;
                     Snake[i].Y = Snake[i - 1].Y;
@@ -161,18 +172,20 @@ namespace SnakeGame
             maxHeight = gamezone.Height / Settings.Height - 1;
             Snake.Clear();
             score = 0;
-            level = 0;
+            level = 1;
             Scorelbl.Text = "Score: " + score;
             Levellbl.Text = "Level " + level;
-            Circle head = new Circle { X = 10, Y = 5 };
-            Snake.Add(head); // A snake fejét hozzáadjuk a listához
-            for (int i = 0; i < 100; i++)
+
+            // Add 4 circles to represent the head and 3 body parts
+            for (int i = 0; i < 4; i++)
             {
-                Circle body = new Circle();
-                Snake.Add(body);
+                Circle circle = new Circle { X = 10 - i, Y = 5 };
+                Snake.Add(circle);
             }
+
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
             obstacle = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
+
             GameTimer.Start();
         }
 
@@ -233,20 +246,27 @@ namespace SnakeGame
 
             GameTimer.Stop();
             GameTimer.Dispose();
-            //Megjelenít egy üzenetet ami megkérdi, hogy beakarja-e zárni
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+
+            if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
             {
+                e.Cancel = true;                
 
-                e.Cancel = false;
+                using (var dialog = new CloseScreen())
+                {
+                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    {
+                        userConfirmedClosing = true;
+                        Application.Exit();
+                    }
+                    if(dialog.ShowDialog() == DialogResult.No)
+                    {
 
-            }
-            else if (result == DialogResult.No)
-            {
+                        userConfirmedClosing = false;
+                        e.Cancel = true;
+                        GameTimer.Start();
 
-                GameTimer.Start();
-                e.Cancel = true;
-
+                    }
+                }
             }
 
         }

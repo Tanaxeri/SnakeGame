@@ -13,6 +13,9 @@ namespace SnakeGame
 {
     public partial class StartScreen : Form
     {
+
+        private bool userConfirmedClosing = false;
+
         public StartScreen()
         {
             InitializeComponent();
@@ -22,7 +25,8 @@ namespace SnakeGame
         private void Leaderboardbtn_Click(object sender, EventArgs e)
         {
             //Bezárjuk a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
-            this.Close();
+            userConfirmedClosing = true;
+            this.Hide();
             Program.leaderboardscreen.Show();
 
         }
@@ -45,7 +49,8 @@ namespace SnakeGame
                     Program.gamescreen.PlayerName = playerName;
                     Program.gamescreen.Show();
                     Program.gamescreen.RestartGame();
-                    this.Close();
+                    userConfirmedClosing = true;
+                    this.Hide();
                 }
             }
 
@@ -54,19 +59,18 @@ namespace SnakeGame
         private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            //Megjelenít egy üzenetet ami megkérdi, hogy beakarja-e zárni
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
             {
-
-                e.Cancel = false;
-
-            }
-            else if (result == DialogResult.No)
-            {
-
                 e.Cancel = true;
 
+                using (var dialog = new CloseScreen())
+                {
+                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    {
+                        userConfirmedClosing = true;
+                        Application.Exit();
+                    }
+                }
             }
 
         }

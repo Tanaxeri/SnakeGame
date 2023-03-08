@@ -15,6 +15,8 @@ namespace SnakeGame
     public partial class GameOverScreen : Form
     {
 
+        private bool userConfirmedClosing = false;
+
         public GameOverScreen()
         {
 
@@ -27,6 +29,7 @@ namespace SnakeGame
         {
 
             Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
+            userConfirmedClosing = true;
             this.Close();
             Program.gamescreen.Close();
             Program.startscreen.Show();
@@ -35,6 +38,7 @@ namespace SnakeGame
 
         private void PlayAgainbtn_Click(object sender, EventArgs e)
         {
+            userConfirmedClosing = true;
             this.Close();
             Program.gamescreen.Show();
             Program.gamescreen.RestartGame();
@@ -45,8 +49,9 @@ namespace SnakeGame
         {
 
             //Bezárjuk a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
+            userConfirmedClosing = true;
             this.Close();
-            Program.gamescreen.Close();
+            Program.gamescreen.Hide();
             Program.startscreen.Show();
 
         }
@@ -62,19 +67,18 @@ namespace SnakeGame
         private void GameOverScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            //Megjelenít egy üzenetet ami megkérdi, hogy beakarja-e zárni
-            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
             {
-
-                e.Cancel = false;
-
-            }
-            else if (result == DialogResult.No)
-            {
-
                 e.Cancel = true;
 
+                using (var dialog = new CloseScreen())
+                {
+                    if (dialog.ShowDialog() == DialogResult.Yes)
+                    {
+                        userConfirmedClosing = true;
+                        Application.Exit();
+                    }
+                }
             }
 
         }

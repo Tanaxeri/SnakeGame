@@ -31,6 +31,7 @@
             this.txtPlayerName = new System.Windows.Forms.TextBox();
             this.Okbtn = new System.Windows.Forms.Button();
             this.Cancelbtn = new System.Windows.Forms.Button();
+            this.Titlelbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPlayerName
@@ -42,6 +43,7 @@
             // 
             // Okbtn
             // 
+            this.Okbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Okbtn.Location = new System.Drawing.Point(493, 304);
             this.Okbtn.Name = "Okbtn";
             this.Okbtn.Size = new System.Drawing.Size(134, 66);
@@ -52,6 +54,7 @@
             // 
             // Cancelbtn
             // 
+            this.Cancelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelbtn.Location = new System.Drawing.Point(107, 304);
             this.Cancelbtn.Name = "Cancelbtn";
             this.Cancelbtn.Size = new System.Drawing.Size(134, 66);
@@ -60,18 +63,31 @@
             this.Cancelbtn.UseVisualStyleBackColor = true;
             this.Cancelbtn.Click += new System.EventHandler(this.Cancelbtn_Click);
             // 
+            // Titlelbl
+            // 
+            this.Titlelbl.AutoSize = true;
+            this.Titlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titlelbl.Location = new System.Drawing.Point(156, 48);
+            this.Titlelbl.Name = "Titlelbl";
+            this.Titlelbl.Size = new System.Drawing.Size(471, 37);
+            this.Titlelbl.TabIndex = 3;
+            this.Titlelbl.Text = "Please enter a name to begin!";
+            // 
             // NameDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Titlelbl);
             this.Controls.Add(this.Cancelbtn);
             this.Controls.Add(this.Okbtn);
             this.Controls.Add(this.txtPlayerName);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NameDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NameDialog";
+            this.Text = "Enter name";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +98,6 @@
         public System.Windows.Forms.TextBox txtPlayerName;
         private System.Windows.Forms.Button Okbtn;
         private System.Windows.Forms.Button Cancelbtn;
+        private System.Windows.Forms.Label Titlelbl;
     }
 }
