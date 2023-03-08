@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SnakeGame
 {
@@ -18,7 +19,10 @@ namespace SnakeGame
 
         public NameDialog()
         {
+
             InitializeComponent();
+            txtPlayerName.MaxLength = 25;
+
         }
 
         private void Okbtn_Click(object sender, EventArgs e)
