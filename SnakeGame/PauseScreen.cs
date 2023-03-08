@@ -10,35 +10,45 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
-    public partial class LeaderboardScreen : Form
+    public partial class PauseScreen : Form
     {
-
         private bool userConfirmedClosing = false;
-
-        public LeaderboardScreen()
+        public PauseScreen()
         {
             InitializeComponent();
-            this.FormClosing += LeaderboardScreen_FormClosing;
+            this.FormClosing += PauseScreen_FormClosing;
         }
 
-        private void LeaderboardScreen_Load(object sender, EventArgs e)
+        private void Returnbtn_Click(object sender, EventArgs e)
         {
 
-            string leaderboardText = Program.database.GetLeaderboard();
-            Lblbl.Text = leaderboardText;
+            this.Close();
+            Program.gamescreen.GameTimer.Start();
+
+        }
+
+        private void Restartbtn_Click(object sender, EventArgs e)
+        {
+
+            userConfirmedClosing = true;
+            this.Close();
+            Program.gamescreen.Show();
+            Program.gamescreen.RestartGame();
 
         }
 
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {
-            //Elrejtük a "LeaderboardScreen" formot és mutatjuk a "StartScreen" formot.
+
+            //Bezárjuk a "PauseScreen" formot és mutatjuk a "StartScreen" formot.
             userConfirmedClosing = true;
-            this.Hide();
+            this.Close();
+            Program.gamescreen.Hide();
             Program.startscreen.Show();
 
         }
 
-        private void LeaderboardScreen_FormClosing(object sender, FormClosingEventArgs e)
+        private void PauseScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
 
             if (e.CloseReason == CloseReason.UserClosing && !userConfirmedClosing)
@@ -51,6 +61,13 @@ namespace SnakeGame
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
+                    }
+                    if (dialog.ShowDialog() == DialogResult.No)
+                    {
+
+                        userConfirmedClosing = false;
+                        e.Cancel = true;
+
                     }
                 }
             }

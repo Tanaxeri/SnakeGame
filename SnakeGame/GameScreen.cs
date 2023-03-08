@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using System.Drawing.Imaging;
+using System.Reflection.Emit;
 
 namespace SnakeGame
 {
@@ -20,7 +21,7 @@ namespace SnakeGame
 
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
-        private Circle obstacle = new Circle();
+        private List<Circle> obstacles = new List<Circle>();
 
         int maxWidth;
         int maxHeight;
@@ -45,6 +46,7 @@ namespace SnakeGame
         
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Left && Settings.directions != "right" || e.KeyCode == Keys.A && Settings.directions != "right")
             {
                 goLeft = true;
@@ -61,9 +63,18 @@ namespace SnakeGame
             {
                 goDown = true;
             }
+            if (e.KeyCode == Keys.Escape)
+            {
+
+                GameTimer.Stop();
+                Program.pausescreen.ShowDialog();
+
+            }
+
         }
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
+
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
                 goLeft = false;
@@ -80,6 +91,7 @@ namespace SnakeGame
             {
                 goDown = false;
             }
+
         }
 
         private void GameTimerEvent(object sender, EventArgs e)
@@ -137,26 +149,28 @@ namespace SnakeGame
                         }
                     }
                 }
-                // Növeli a szintet és akadályokat add.
-                if (score >= 10 && rand.Next(100) < level * 10)
+
+                // Ellenőrzi, hogy a 'Snake' ütközik-e valamelyik akadállyal.
+                foreach (var obs in obstacles)
                 {
-                    // Lehív egy adályt.
-                    obstacle.X = rand.Next(2, maxWidth);
-                    obstacle.Y = rand.Next(2, maxHeight);
+                    if (obs != null && Snake[0].X == obs.X && Snake[0].Y == obs.Y)
+                    {
+                        GameOver();
+                    }
                 }
 
-                // Megnézi hogy ütközik-e a Snake az akadállyal.
-                if (Snake[0].X == obstacle.X && Snake[0].Y == obstacle.Y)
+                if (score % 10 == 0 && score > 0 && score > level * 10)
                 {
-                    GameOver();
-                }
-
-                // Megnöveli a szintet minden 10 pontnál
-                if (score % 10 == 0 && score > 0 && score % 10 == level * 10)
-                {
-                    level = score;
+                    level++;
                     Levellbl.Text = "Level " + level;
+
+                    // Létrehoz új akadályokat, ha a pontszám 10 vagy ha a pontszám 10 többszöröse.
+                    if (score == 10 || score % 10 == 0)
+                    {
+                        CreateObstacle();
+                    }
                 }
+
                 if (i > 0)
                 {
                     Snake[i].X = Snake[i - 1].X;
@@ -166,6 +180,12 @@ namespace SnakeGame
             gamezone.Invalidate();
         }
 
+        // Segítő metódus az akadályok készítésére.
+        private void CreateObstacle()
+        {
+            // Adjon egy új akadályt az osztályhoz.
+            obstacles.Add(new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) });
+        }
         public void RestartGame()
         {
             maxWidth = gamezone.Width / Settings.Width - 1;
@@ -176,7 +196,7 @@ namespace SnakeGame
             Scorelbl.Text = "Score: " + score;
             Levellbl.Text = "Level " + level;
 
-            // Add 4 circles to represent the head and 3 body parts
+            // Hozzáad 4 kört a fej és 3 testrész ábrázolására
             for (int i = 0; i < 4; i++)
             {
                 Circle circle = new Circle { X = 10 - i, Y = 5 };
@@ -184,7 +204,6 @@ namespace SnakeGame
             }
 
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            obstacle = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
 
             GameTimer.Start();
         }
@@ -217,6 +236,16 @@ namespace SnakeGame
             food.Y * Settings.Height,
             Settings.Width, Settings.Height
             ));
+            for( int i = 0; i < obstacles.Count; i++) 
+            { 
+                canvas.FillEllipse(Brushes.Yellow, new Rectangle
+                (
+                obstacles[i].X * Settings.Width,
+                obstacles[i].Y * Settings.Height,
+                Settings.Width, Settings.Height
+                ));
+            }
+
 
         }
 

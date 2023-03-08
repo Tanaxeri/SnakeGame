@@ -24,7 +24,7 @@ namespace SnakeGame
 
         private void Leaderboardbtn_Click(object sender, EventArgs e)
         {
-            //Bezárjuk a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
+            //Elrejtük a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
             userConfirmedClosing = true;
             this.Hide();
             Program.leaderboardscreen.Show();

@@ -31,7 +31,7 @@ namespace SnakeGame
             Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
             userConfirmedClosing = true;
             this.Close();
-            Program.gamescreen.Close();
+            Program.gamescreen.Hide();
             Program.startscreen.Show();
 
         }
@@ -77,6 +77,13 @@ namespace SnakeGame
                     {
                         userConfirmedClosing = true;
                         Application.Exit();
+                    }
+                    if (dialog.ShowDialog() == DialogResult.No)
+                    {
+
+                        userConfirmedClosing = false;
+                        e.Cancel = true;
+
                     }
                 }
             }

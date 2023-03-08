@@ -40,23 +40,26 @@
             // FinalScorelbl
             // 
             this.FinalScorelbl.AutoSize = true;
+            this.FinalScorelbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalScorelbl.Location = new System.Drawing.Point(265, 167);
             this.FinalScorelbl.Name = "FinalScorelbl";
-            this.FinalScorelbl.Size = new System.Drawing.Size(153, 21);
+            this.FinalScorelbl.Size = new System.Drawing.Size(153, 22);
             this.FinalScorelbl.TabIndex = 0;
             this.FinalScorelbl.Text = "Final Score: ";
             // 
             // FinalLevellbl
             // 
             this.FinalLevellbl.AutoSize = true;
+            this.FinalLevellbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalLevellbl.Location = new System.Drawing.Point(597, 167);
             this.FinalLevellbl.Name = "FinalLevellbl";
-            this.FinalLevellbl.Size = new System.Drawing.Size(153, 21);
+            this.FinalLevellbl.Size = new System.Drawing.Size(153, 22);
             this.FinalLevellbl.TabIndex = 1;
             this.FinalLevellbl.Text = "Final Level: ";
             // 
             // Savebtn
             // 
+            this.Savebtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebtn.Location = new System.Drawing.Point(64, 330);
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(141, 65);
@@ -77,6 +80,7 @@
             // 
             // PlayAgainbtn
             // 
+            this.PlayAgainbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayAgainbtn.Location = new System.Drawing.Point(432, 330);
             this.PlayAgainbtn.Name = "PlayAgainbtn";
             this.PlayAgainbtn.Size = new System.Drawing.Size(141, 65);
@@ -87,6 +91,7 @@
             // 
             // ReturntoTSbtn
             // 
+            this.ReturntoTSbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturntoTSbtn.Location = new System.Drawing.Point(767, 330);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
             this.ReturntoTSbtn.Size = new System.Drawing.Size(160, 65);

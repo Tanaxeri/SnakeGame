@@ -13,6 +13,7 @@ namespace SnakeGame
         static public GameScreen gamescreen = null;
         static public GameOverScreen gameoverscreen = null;
         static public LeaderboardScreen leaderboardscreen = null;
+        static public PauseScreen pausescreen = null;
         static public Database database = null;
 
         static void Main()
@@ -20,6 +21,7 @@ namespace SnakeGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             database = new Database("localhost", "root", "", "snakegamedb");
+            pausescreen = new PauseScreen();
             gameoverscreen = new GameOverScreen();
             gamescreen = new GameScreen();
             leaderboardscreen = new LeaderboardScreen();
