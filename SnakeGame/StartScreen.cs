@@ -19,20 +19,24 @@ namespace SnakeGame
         public StartScreen()
         {
             InitializeComponent();
-            this.Shown += StartScreen_Shown;            
+            this.VisibleChanged += StartScreen_VisibleChanged;
         }
 
-        private void StartScreen_Shown(object sender, EventArgs e)
+        private void StartScreen_VisibleChanged(object sender, EventArgs e)
         {
-            userConfirmedClosing = false; // reset userConfirmedClosing flag
+            if (this.Visible)
+            {
+                userConfirmedClosing = false; // reset userConfirmedClosing flag
+            }
         }
 
         private void Leaderboardbtn_Click(object sender, EventArgs e)
         {
-            //Elrejtük a "StartScreen" formot és mutatjuk a "LeaderboardScreen" formot.
-            Program.leaderboardscreen.Show();
+            //Bezárjuk a "StartScreen" formot és mutatjuk az  'új' "LeaderboardScreen" formot.
+            var leaderboardscreen = new LeaderboardScreen();
+            leaderboardscreen.Show();
             userConfirmedClosing = true;
-            this.Hide();          
+            this.Close();          
 
         }
 
@@ -55,7 +59,7 @@ namespace SnakeGame
                     Program.gamescreen.Show();
                     Program.gamescreen.RestartGame();
                     userConfirmedClosing = true;
-                    this.Hide();                
+                    this.Close();                
 
                 }
             }
@@ -70,11 +74,14 @@ namespace SnakeGame
 
                 using (var dialog = new CloseScreen())
                 {
+                    dialog.FormClosed += (s, args) => {
+                        userConfirmedClosing = false; // reset flag after dialog is closed
+                    };
                     this.FormClosing -= StartScreen_FormClosing; // remove event handler
                     var result = dialog.ShowDialog();
                     if (result == DialogResult.Yes)
                     {
-                        userConfirmedClosing = true;
+                        userConfirmedClosing = true;                        
                         Application.Exit();
                     }
                     else if (result == DialogResult.No)

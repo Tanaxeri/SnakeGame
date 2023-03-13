@@ -39,13 +39,16 @@ namespace SnakeGame
         {
             InitializeComponent();
             new Settings();
-            this.Shown += GameScreen_Shown;
+            this.VisibleChanged += GameScreen_VisibleChanged;
 
         }
 
-        private void GameScreen_Shown(object sender, EventArgs e)
+        private void GameScreen_VisibleChanged(object sender, EventArgs e)
         {
-            userConfirmedClosing = false; // reset userConfirmedClosing flag
+            if (this.Visible)
+            {
+                userConfirmedClosing = false; // reset userConfirmedClosing flag
+            }
         }
 
         private void KeyIsDown(object sender, KeyEventArgs e)
@@ -286,6 +289,9 @@ namespace SnakeGame
 
                 using (var dialog = new CloseScreen())
                 {
+                    dialog.FormClosed += (s, args) => {
+                        userConfirmedClosing = false; // reset flag after dialog is closed
+                    };
                     this.FormClosing -= GameScreen_FormClosing; // remove event handler
                     var result = dialog.ShowDialog();
                     if (result == DialogResult.Yes)

@@ -20,21 +20,25 @@ namespace SnakeGame
         public GameOverScreen()
         {
             InitializeComponent();
-            this.Shown += GameOverScreen_Shown;
+            this.VisibleChanged += GameOverScreen_VisibleChanged;
         }
 
-        private void GameOverScreen_Shown(object sender, EventArgs e)
+        private void GameOverScreen_VisibleChanged(object sender, EventArgs e)
         {
-            userConfirmedClosing = false; // reset userConfirmedClosing flag
+            if (this.Visible)
+            {
+                userConfirmedClosing = false; // reset userConfirmedClosing flag
+            }
         }
 
         private void Savebtn_Click(object sender, EventArgs e)
         {
 
             Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
-            Program.gamescreen.Hide();
-            Program.startscreen.Show();
+            var startscreen = new StartScreen();
+            startscreen.Show();
             userConfirmedClosing = true;
+            Program.gamescreen.Close();       
             this.Close();
 
         }
@@ -52,9 +56,10 @@ namespace SnakeGame
         {
 
             //Bezárjuk a "GameOverScreen" formot és mutatjuk a "StartScreen" formot.
-            Program.gamescreen.Hide();
-            Program.startscreen.Show();
+            var startscreen = new StartScreen();
+            startscreen.Show();
             userConfirmedClosing = true;
+            Program.gamescreen.Hide();
             this.Close();
 
         }
@@ -76,6 +81,9 @@ namespace SnakeGame
 
                 using (var dialog = new CloseScreen())
                 {
+                    dialog.FormClosed += (s, args) => {
+                        userConfirmedClosing = false; // reset flag after dialog is closed
+                    };
                     this.FormClosing -= GameOverScreen_FormClosing; // remove event handler
                     var result = dialog.ShowDialog();
                     if (result == DialogResult.Yes)
