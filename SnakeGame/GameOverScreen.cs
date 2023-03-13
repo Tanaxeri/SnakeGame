@@ -15,7 +15,7 @@ namespace SnakeGame
     public partial class GameOverScreen : Form
     {
 
-        private bool userConfirmedClosing = false;
+        private bool userConfirmedClosing;
 
         public GameOverScreen()
         {

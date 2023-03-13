@@ -13,7 +13,7 @@ namespace SnakeGame
     public partial class LeaderboardScreen : Form
     {
 
-        private bool userConfirmedClosing = false;
+        private bool userConfirmedClosing;
 
         public LeaderboardScreen()
         {

@@ -14,12 +14,12 @@ namespace SnakeGame
     public partial class StartScreen : Form
     {
 
-        private bool userConfirmedClosing = false;
+        private bool userConfirmedClosing;
 
         public StartScreen()
         {
             InitializeComponent();
-            this.Shown += StartScreen_Shown;
+            this.Shown += StartScreen_Shown;            
         }
 
         private void StartScreen_Shown(object sender, EventArgs e)

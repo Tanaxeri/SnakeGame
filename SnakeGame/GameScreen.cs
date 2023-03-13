@@ -16,7 +16,7 @@ namespace SnakeGame
     public partial class GameScreen : Form
     {
 
-        private bool userConfirmedClosing = false;
+        private bool userConfirmedClosing;
 
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();

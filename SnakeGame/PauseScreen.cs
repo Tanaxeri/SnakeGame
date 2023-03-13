@@ -12,7 +12,7 @@ namespace SnakeGame
 {
     public partial class PauseScreen : Form
     {
-        private bool userConfirmedClosing = false;
+        private bool userConfirmedClosing;
         public PauseScreen()
         {
             InitializeComponent();
