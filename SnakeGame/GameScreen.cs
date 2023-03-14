@@ -35,6 +35,8 @@ namespace SnakeGame
 
         bool goLeft, goRight, goDown, goUp;
 
+        bool hasMoved;
+
         public GameScreen()
         {
             InitializeComponent();
@@ -144,6 +146,19 @@ namespace SnakeGame
                     {
                         GameOver();
                     }
+                    if (hasMoved)
+                    {
+                        for (int j = 1; j < Snake.Count; j++)
+                        {
+                            if (Snake[0].X == Snake[j].X && Snake[0].Y == Snake[j].Y)
+                            {
+                                GameOver();
+                            }
+                        }
+                    }
+
+                    // set hasMoved to true after the first movement
+                    hasMoved = true;
                     if (Snake[i].X == food.X && Snake[i].Y == food.Y)
                     {
                         EatFood();
@@ -210,6 +225,7 @@ namespace SnakeGame
 
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
 
+            hasMoved = false;
             GameTimer.Start();
         }
 
