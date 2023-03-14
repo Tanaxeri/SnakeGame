@@ -38,7 +38,7 @@ namespace SnakeGame
             var startscreen = new StartScreen();
             startscreen.Show();
             userConfirmedClosing = true;
-            Program.gamescreen.Close();       
+            Program.gamescreen.Hide();       
             this.Close();
 
         }

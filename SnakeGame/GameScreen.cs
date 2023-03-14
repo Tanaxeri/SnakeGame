@@ -146,6 +146,7 @@ namespace SnakeGame
                     {
                         GameOver();
                     }
+
                     if (hasMoved)
                     {
                         for (int j = 1; j < Snake.Count; j++)
@@ -157,8 +158,8 @@ namespace SnakeGame
                         }
                     }
 
-                    // set hasMoved to true after the first movement
                     hasMoved = true;
+
                     if (Snake[i].X == food.X && Snake[i].Y == food.Y)
                     {
                         EatFood();
@@ -224,9 +225,9 @@ namespace SnakeGame
             }
 
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-
-            hasMoved = false;
+            
             GameTimer.Start();
+            hasMoved = false;
         }
 
         private void UpdateGameGraphics(object sender, PaintEventArgs e)
