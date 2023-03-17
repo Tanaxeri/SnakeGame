@@ -35,7 +35,7 @@ namespace SnakeGame
 
         bool goLeft, goRight, goDown, goUp;
 
-        bool hasMoved;
+        public bool hasMoved;
 
         public GameScreen()
         {
@@ -192,6 +192,11 @@ namespace SnakeGame
                 {
                     CreateObstacle();
                 }
+                if (score == 10 || score % 10 == 0)
+                {
+                    CreateObstacle();
+                    CreateObstacle();
+                }
             }
 
             gamezone.Invalidate();
@@ -225,7 +230,8 @@ namespace SnakeGame
             }
 
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            
+            CreateObstacle();
+
             GameTimer.Start();
             hasMoved = false;
         }

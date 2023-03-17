@@ -39,6 +39,7 @@ namespace SnakeGame
         private void Restartbtn_Click(object sender, EventArgs e)
         {
 
+            Program.gamescreen.hasMoved = false;
             Program.gamescreen.RestartGame();
             userConfirmedClosing = true;
             this.Close();            
