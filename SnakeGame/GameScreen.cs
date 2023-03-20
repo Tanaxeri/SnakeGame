@@ -174,10 +174,12 @@ namespace SnakeGame
             }
 
             // Ellenőrzi, hogy a 'Snake' ütközik-e valamelyik akadállyal.
-            foreach (var obs in obstacles)
+            for (int i = obstacles.Count - 1; i >= 0; i--)
             {
+                var obs = obstacles[i];
                 if (obs != null && Snake[0].X == obs.X && Snake[0].Y == obs.Y)
                 {
+                    obstacles.RemoveAt(i);
                     GameOver();
                 }
             }
@@ -187,11 +189,8 @@ namespace SnakeGame
                 level++;
                 Levellbl.Text = "Level " + level;
 
-                // Létrehoz új akadályokat, ha a pontszám 10 vagy ha a pontszám 10 többszöröse.
-                if (score == 5 || score % 5 == 0)
-                {
-                    CreateObstacle();
-                }
+                CreateObstacle();
+
                 if (score == 10 || score % 10 == 0)
                 {
                     CreateObstacle();
@@ -230,7 +229,16 @@ namespace SnakeGame
             }
 
             food = new Circle { X = rand.Next(2, maxWidth), Y = rand.Next(2, maxHeight) };
-            CreateObstacle();
+
+            //5 akadályt letesz amikor elkezdödik a játék.
+            for (int i = 0; i < 5; i++)
+            {
+                obstacles.Add(new Circle()
+                {
+                    X = rand.Next(0, maxWidth),
+                    Y = rand.Next(0, maxHeight)
+                });
+            }
 
             GameTimer.Start();
             hasMoved = false;
