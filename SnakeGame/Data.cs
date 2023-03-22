@@ -5,6 +5,9 @@ using System.Windows.Forms;
 using System.Globalization;
 using Microsoft.VisualBasic.FileIO;
 using System.Reflection.Emit;
+using System.Linq;
+using CsvHelper;
+using CsvHelper.Configuration;
 
 namespace SnakeGame
 {
@@ -22,68 +25,67 @@ namespace SnakeGame
         {
             try
             {
-                using (TextFieldParser parser = new TextFieldParser(forras))
+                using (var reader = new StreamReader(forras))
+                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
-                    // Set the delimiter of the CSV file
-                    parser.TextFieldType = FieldType.Delimited;
-                    parser.SetDelimiters(",");
 
-                    // Skip the header row
-                    parser.ReadLine();
-
-                    while (!parser.EndOfData)
+                    var config = new CsvConfiguration(CultureInfo.InvariantCulture)
                     {
-                        // Read each line as an array of fields
-                        string[] fields = parser.ReadFields();
-
-                        // Parse the fields as needed
-                        int ID;
-                        if (!int.TryParse(fields[0], out ID))
+                        Delimiter = ",",
+                        HasHeaderRecord = true,
+                        IgnoreBlankLines = true,
+                        BadDataFound = context =>
                         {
-                            MessageBox.Show("Id Hiba");// handle the error here, e.g. by logging it or displaying a message to the user
-                            continue; // skip this line and continue with the next line
+                            MessageBox.Show($"Error parsing data: {context.RawRecord}");
                         }
-
-                        string PlayerName = fields[1];
-
-                        int Score;
-                        if (!int.TryParse(fields[2], out Score))
+                    };
+                    var records = csv.GetRecords<dynamic>();
+                    foreach (var record in records)
+                    {
+                        try
                         {
-                            MessageBox.Show("Score Hiba");// handle the error here, e.g. by logging it or displaying a message to the user
-                            continue; // skip this line and continue with the next line
-                        }
+                            int id;
+                            if (!int.TryParse((string)record.ID, out id))
+                            {
+                                throw new Exception("Invalid score value");
+                            }
+                            string playerName = (string)record.PlayerName;
+                            int score;
+                            if (!int.TryParse((string)record.Score, out score))
+                            {
+                                throw new Exception("Invalid score value");
+                            }
+                            int level;
+                            if (!int.TryParse((string)record.Level, out level))
+                            {
+                                throw new Exception("Invalid score value");
+                            }
+                            DateTime date = DateTime.ParseExact((string)record.Date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
-                        int Level;
-                        if (!int.TryParse(fields[3], out Level))
+                            if (id <= 0 || score < 0 || level < 0 || date > DateTime.Now)
+                            {
+                                throw new Exception("Invalid data"); // throw an exception for invalid data
+                            }
+
+                            snake.Add(new Snake(id, playerName, score, level, date));
+                        }
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Level Hiba");// handle the error here, e.g. by logging it or displaying a message to the user
-                            continue; // skip this line and continue with the next line
+                            // handle the exception here, e.g. by logging it or displaying a message to the user
+                            MessageBox.Show($"Error parsing data: {ex.Message}");
                         }
-
-                        DateTime Date;
-                        if (!DateTime.TryParseExact(fields[4], "yyyy.MM.dd", null, DateTimeStyles.None, out Date))
-                        {
-                            MessageBox.Show("Date Hiba");// handle the error here, e.g. by logging it or displaying a message to the user
-                            continue; // skip this line and continue with the next line
-                        }
-
-                        snake.Add(new Snake(ID, PlayerName, Score, Level, Date));
-                        
                     }
 
-                    string dataContent = "";
-                    foreach (Snake s in snake)
-                    {
-                        dataContent += s.Playername + "," + s.Score + "," + s.Level + "\n";
-                    }
+                    var topScores = snake.OrderByDescending(s => s.Score).Take(10);
+
+                    string dataContent = string.Join("\n", topScores.Select(s => $"Playername: {s.Playername}, Score: {s.Score}, Level: {s.Level}"));
                     DataContent = dataContent;
-
                 }
-                
+
             }
             catch (IOException ex)
             {
-                MessageBox.Show(ex.Message + "\n\nA program leáll!");
+                MessageBox.Show($"Error reading file: {ex.Message}");
                 Environment.Exit(0);
             }
         }
@@ -99,19 +101,22 @@ namespace SnakeGame
                 File.Copy(filename, backupFilename, true);
 
                 // Generate the data to be saved
-                string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                DateTime timestamp = DateTime.Now;
                 int id = File.ReadAllLines(filename).Length + 1;
-                string dataLine = $"{id},{playerName},{score},{level},{timestamp}";
+                Snake newSnake = new Snake(id, playerName, score, level, timestamp);
 
-                // Open the file in a FileStream
-                using (FileStream fs = new FileStream(filename, FileMode.Append, FileAccess.Write, FileShare.None))
+                // Write the data to the file and add the newSnake object to the list
+                using (var writer = new StreamWriter(filename, true))
+                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
                 {
-                    // Write the data to the file
-                    using (StreamWriter sw = new StreamWriter(fs))
-                    {
-                        sw.WriteLine(dataLine);
-                    }
+                    csv.WriteRecord(newSnake);
+                    Snake.Add(newSnake);
                 }
+
+                var topScores = Snake.OrderByDescending(s => s.Score).Take(10);
+
+                string dataContent = string.Join("\n", topScores.Select(s => $"Playername: {s.Playername}, Score: {s.Score}, Level: {s.Level}"));
+                DataContent = dataContent;
             }
             catch (IOException ex)
             {
@@ -120,8 +125,7 @@ namespace SnakeGame
             }
 
             MessageBox.Show("Az adatok mentése sikeres!");
+
         }
-
-
     }
 }
