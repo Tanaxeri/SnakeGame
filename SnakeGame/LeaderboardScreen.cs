@@ -32,7 +32,7 @@ namespace SnakeGame
         private void LeaderboardScreen_Load(object sender, EventArgs e)
         {
 
-            string leaderboardText = Program.data.ToString();//Program.database.GetLeaderboard();
+            string leaderboardText = Program.data.DataContent;//Program.database.GetLeaderboard();
             Lblbl.Text = leaderboardText;
 
         }

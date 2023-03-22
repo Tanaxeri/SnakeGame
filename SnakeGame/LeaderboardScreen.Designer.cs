@@ -87,6 +87,6 @@
 
         private System.Windows.Forms.Button ReturntoTSbtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Lblbl;
+        protected System.Windows.Forms.Label Lblbl;
     }
 }

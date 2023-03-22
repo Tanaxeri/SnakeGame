@@ -23,11 +23,11 @@ namespace SnakeGame
 
         public Snake(int id, string playername, int score, int level, DateTime date)
         {
-            this.Id = id;
-            this.Playername = playername;
-            this.Score = score;
-            this.Level = level;
-            this.Date = date;
+            this.id = id;
+            this.playername = playername;
+            this.score = score;
+            this.level = level;
+            this.date = date;
         }
 
 

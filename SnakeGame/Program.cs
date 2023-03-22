@@ -21,13 +21,13 @@ namespace SnakeGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            startscreen = new StartScreen();                                
+            gamescreen = new GameScreen();
+            gameoverscreen = new GameOverScreen();            
+            leaderboardscreen = new LeaderboardScreen();
+            pausescreen = new PauseScreen();
             database = new Database("localhost", "root", "", "snakegamedb");
             data = new Data("snakegamedb.csv");
-            pausescreen = new PauseScreen();
-            gameoverscreen = new GameOverScreen();
-            gamescreen = new GameScreen();
-            leaderboardscreen = new LeaderboardScreen();
-            startscreen = new StartScreen();
 
             startscreen.Show();
 
