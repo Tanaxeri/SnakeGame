@@ -34,7 +34,7 @@ namespace SnakeGame
         private void Savebtn_Click(object sender, EventArgs e)
         {
 
-            Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
+            Program.data.Mentes();//Program.database.Save(Program.gamescreen.PlayerName,Program.gamescreen.highScore,Program.gamescreen.Finallevel,DateTime.Now);
             var startscreen = new StartScreen();
             startscreen.Show();
             userConfirmedClosing = true;

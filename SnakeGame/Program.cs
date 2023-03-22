@@ -15,12 +15,14 @@ namespace SnakeGame
         static public LeaderboardScreen leaderboardscreen = null;
         static public PauseScreen pausescreen = null;
         static public Database database = null;
+        static public Data data = null;
 
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             database = new Database("localhost", "root", "", "snakegamedb");
+            data = new Data("snakegamedb.csv");
             pausescreen = new PauseScreen();
             gameoverscreen = new GameOverScreen();
             gamescreen = new GameScreen();
