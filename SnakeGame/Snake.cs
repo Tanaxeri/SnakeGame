@@ -9,11 +9,11 @@ namespace SnakeGame
     internal class Snake
     {
 
-        int id;
-        string playername;
-        int score;
-        int level;
-        DateTime date;
+        protected int id;
+        protected string playername;
+        protected int score;
+        protected int level;
+        protected DateTime date;
 
         public int Id { get => id; set => id = value; }
         public string Playername { get => playername; set => playername = value; }
@@ -23,11 +23,11 @@ namespace SnakeGame
 
         public Snake(int id, string playername, int score, int level, DateTime date)
         {
-            this.id = id;
-            this.playername = playername;
-            this.score = score;
-            this.level = level;
-            this.date = date;
+            this.Id = id;
+            this.Playername = playername;
+            this.Score = score;
+            this.Level = level;
+            this.Date = date;
         }
 
 
