@@ -60,7 +60,7 @@ namespace SnakeGame
                             {
                                 throw new Exception("Invalid score value");
                             }
-                            DateTime date = DateTime.ParseExact((string)record.Date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            DateTime date = DateTime.ParseExact((string)record.Date, "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
 
                             if (id <= 0 || score < 0 || level < 0 || date > DateTime.Now)
                             {
@@ -78,7 +78,7 @@ namespace SnakeGame
 
                     var topScores = snake.OrderByDescending(s => s.Score).Take(10);
 
-                    string dataContent = string.Join("\n", topScores.Select(s => $"Playername: {s.Playername}, Score: {s.Score}, Level: {s.Level}"));
+                    string dataContent = string.Join("\n", topScores.Select(s => $"| {s.Playername}| Score: {s.Score}| Level: {s.Level}|"));
                     DataContent = dataContent;
                 }
 
@@ -93,7 +93,7 @@ namespace SnakeGame
         public void Mentes(string playerName, int score, int level)
         {
             string filename = "snakegamedb.csv";
-            string backupFilename = "Backup_" + DateTime.Now.ToString("yyyy.MM.dd") + ".csv";
+            string backupFilename = "Backup_" + DateTime.Now.ToString("MM.dd.yyyy_HH.mm.ss") + ".csv";
 
             try
             {
