@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnakeGame", "SnakeGame\SnakeGame.csproj", "{6A8DF78D-7997-4CFE-A03A-26D2A20B435F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SnakeSetup", "SnakeSetup\SnakeSetup.vdproj", "{F2522CB1-F5F0-4462-B845-C16DB4BAD9E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{6A8DF78D-7997-4CFE-A03A-26D2A20B435F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A8DF78D-7997-4CFE-A03A-26D2A20B435F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A8DF78D-7997-4CFE-A03A-26D2A20B435F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2522CB1-F5F0-4462-B845-C16DB4BAD9E9}.Debug|Any CPU.ActiveCfg = Debug
+		{F2522CB1-F5F0-4462-B845-C16DB4BAD9E9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
