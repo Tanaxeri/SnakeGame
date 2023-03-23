@@ -115,7 +115,7 @@ namespace SnakeGame
 
                 var topScores = Snake.OrderByDescending(s => s.Score).Take(10);
 
-                string dataContent = string.Join("\n", topScores.Select(s => $"Playername: {s.Playername}, Score: {s.Score}, Level: {s.Level}"));
+                string dataContent = string.Join("\n", topScores.Select(s => $"| {s.Playername}| Score: {s.Score}| Level: {s.Level}|"));
                 DataContent = dataContent;
             }
             catch (IOException ex)
