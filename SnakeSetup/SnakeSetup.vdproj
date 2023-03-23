@@ -864,7 +864,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Snake"
         "ProductCode" = "8:{E4FC261D-3C22-49A7-B140-CF24C0DC13C2}"
-        "PackageCode" = "8:{F40B5249-2986-4FC4-93B0-2E4ACA0ACC45}"
+        "PackageCode" = "8:{77FA6216-EC0C-43C2-9F70-256B34539C81}"
         "UpgradeCode" = "8:{EB2B2C0F-20F3-4674-9361-B9190BA35683}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -1186,7 +1186,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:Create Programs Shortcut"
+                            "Value" = "8:Create Start Menu Shortcut"
                             "DefaultValue" = "8:#1235"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1199,7 +1199,7 @@
                             "ContextData" = "8:Public"
                             "Attributes" = "3:2"
                             "Setting" = "3:2"
-                            "Value" = "8:CREATEPROGRAMSSHORTCUT"
+                            "Value" = "8:CREATESTARTMENUSHORTCUT"
                             "DefaultValue" = "8:CHECKBOXA2"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1669,7 +1669,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8B1496E9C3FA4F48997C65BEDFCDFD0E"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\SnakeGame\\obj\\Debug\\SnakeGame.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0AFECCC2BB9249EE9D0AF443722F172E"
