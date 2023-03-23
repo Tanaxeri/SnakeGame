@@ -171,6 +171,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DC8A4F9511ED40B9B77D264D44131625"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E52D66E08F03A075B301FD8C887818B9"
         "OwnerKey" = "8:_7EB7366A021902A8B0E65EF768D6498B"
         "MsmSig" = "8:_UNDEFINED"
@@ -179,12 +185,6 @@
         {
         "MsmKey" = "8:_E52D66E08F03A075B301FD8C887818B9"
         "OwnerKey" = "8:_8B1496E9C3FA4F48997C65BEDFCDFD0E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C8ADACE66076A2DA00D22794BC9C9999"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -253,6 +253,12 @@
         "OwnerKey" = "8:_2B955750B0D9663CB1E7842A101D5266"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C8ADACE66076A2DA00D22794BC9C9999"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -271,6 +277,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -287,6 +301,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -644,6 +666,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC8A4F9511ED40B9B77D264D44131625"
+            {
+            "SourcePath" = "8:..\\SnakeGame\\snakegamedb.csv"
+            "TargetName" = "8:snakegamedb.csv"
+            "Tag" = "8:"
+            "Folder" = "8:_0AFECCC2BB9249EE9D0AF443722F172E"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:TRUE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E52D66E08F03A075B301FD8C887818B9"
