@@ -390,7 +390,7 @@
             "Sequence" = "3:1"
             "Identifier" = "8:_C02F40D7_CCB6_47B4_B7BC_150A436FE733"
             "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:/CreateShortcut=[CREATEDESKTOPSHORTCUT], Create"
+            "CustomActionData" = "8:/CreateShortcut=[CREATEDESKTOPSHORTCUT,CREATEPROGRAMSSHORTCUT]"
             }
         }
         "DefaultFeature"
@@ -864,7 +864,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Snake"
         "ProductCode" = "8:{E4FC261D-3C22-49A7-B140-CF24C0DC13C2}"
-        "PackageCode" = "8:{C9703293-4D6A-4210-BDA3-1D714B0A8C7B}"
+        "PackageCode" = "8:{F40B5249-2986-4FC4-93B0-2E4ACA0ACC45}"
         "UpgradeCode" = "8:{EB2B2C0F-20F3-4674-9361-B9190BA35683}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -1669,7 +1669,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8B1496E9C3FA4F48997C65BEDFCDFD0E"
             {
-            "SourcePath" = "8:..\\SnakeGame\\obj\\Debug\\SnakeGame.exe"
+            "SourcePath" = "8:"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0AFECCC2BB9249EE9D0AF443722F172E"
