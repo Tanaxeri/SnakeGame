@@ -285,6 +285,13 @@ namespace SnakeGame
 
         }
 
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+
+            CenterToScreen();
+
+        }
+
         private void EatFood()
         {
             score += 1;

@@ -39,6 +39,7 @@
             // 
             // FinalScorelbl
             // 
+            this.FinalScorelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FinalScorelbl.AutoSize = true;
             this.FinalScorelbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalScorelbl.Location = new System.Drawing.Point(265, 167);
@@ -49,6 +50,7 @@
             // 
             // FinalLevellbl
             // 
+            this.FinalLevellbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FinalLevellbl.AutoSize = true;
             this.FinalLevellbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalLevellbl.Location = new System.Drawing.Point(597, 167);
@@ -59,6 +61,7 @@
             // 
             // Savebtn
             // 
+            this.Savebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Savebtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebtn.Location = new System.Drawing.Point(64, 330);
             this.Savebtn.Name = "Savebtn";
@@ -70,6 +73,7 @@
             // 
             // GameOverlbl
             // 
+            this.GameOverlbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GameOverlbl.AutoSize = true;
             this.GameOverlbl.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameOverlbl.Location = new System.Drawing.Point(326, 33);
@@ -80,6 +84,7 @@
             // 
             // PlayAgainbtn
             // 
+            this.PlayAgainbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PlayAgainbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayAgainbtn.Location = new System.Drawing.Point(432, 330);
             this.PlayAgainbtn.Name = "PlayAgainbtn";
@@ -91,6 +96,7 @@
             // 
             // ReturntoTSbtn
             // 
+            this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReturntoTSbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturntoTSbtn.Location = new System.Drawing.Point(767, 330);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";

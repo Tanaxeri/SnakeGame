@@ -35,6 +35,7 @@
             // 
             // Titlelbl
             // 
+            this.Titlelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Titlelbl.AutoSize = true;
             this.Titlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titlelbl.Location = new System.Drawing.Point(21, 66);
@@ -45,6 +46,7 @@
             // 
             // Nobtn
             // 
+            this.Nobtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Nobtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nobtn.Location = new System.Drawing.Point(49, 263);
             this.Nobtn.Name = "Nobtn";
@@ -56,6 +58,7 @@
             // 
             // Yesbtn
             // 
+            this.Yesbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Yesbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Yesbtn.Location = new System.Drawing.Point(545, 263);
             this.Yesbtn.Name = "Yesbtn";
@@ -79,6 +82,7 @@
             this.Name = "CloseScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Closing application";
+            this.Load += new System.EventHandler(this.CloseScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

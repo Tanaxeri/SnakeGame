@@ -39,6 +39,7 @@
             // 
             // Scorelbl
             // 
+            this.Scorelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Scorelbl.AutoSize = true;
             this.Scorelbl.Location = new System.Drawing.Point(1174, 6);
             this.Scorelbl.Name = "Scorelbl";
@@ -52,6 +53,7 @@
             // 
             // gamezone
             // 
+            this.gamezone.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gamezone.BackColor = System.Drawing.Color.DarkGray;
             this.gamezone.Location = new System.Drawing.Point(31, 30);
             this.gamezone.Name = "gamezone";
@@ -62,6 +64,7 @@
             // 
             // Levellbl
             // 
+            this.Levellbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Levellbl.AutoSize = true;
             this.Levellbl.Location = new System.Drawing.Point(12, 6);
             this.Levellbl.Name = "Levellbl";
@@ -73,6 +76,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.Levellbl);
             this.Controls.Add(this.gamezone);
@@ -85,6 +90,7 @@
             this.Text = "Snake Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameScreen_FormClosing);
+            this.Load += new System.EventHandler(this.GameScreen_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.gamezone)).EndInit();

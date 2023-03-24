@@ -36,6 +36,7 @@
             // 
             // Titlelbl
             // 
+            this.Titlelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Titlelbl.AutoSize = true;
             this.Titlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titlelbl.Location = new System.Drawing.Point(258, 28);
@@ -46,6 +47,7 @@
             // 
             // Restartbtn
             // 
+            this.Restartbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Restartbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Restartbtn.Location = new System.Drawing.Point(238, 228);
             this.Restartbtn.Name = "Restartbtn";
@@ -57,6 +59,7 @@
             // 
             // ReturntoTSbtn
             // 
+            this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReturntoTSbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturntoTSbtn.Location = new System.Drawing.Point(238, 341);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
@@ -68,6 +71,7 @@
             // 
             // Returnbtn
             // 
+            this.Returnbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Returnbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Returnbtn.Location = new System.Drawing.Point(238, 116);
             this.Returnbtn.Name = "Returnbtn";
@@ -93,6 +97,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pause";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PauseScreen_FormClosing);
+            this.Load += new System.EventHandler(this.PauseScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,5 +33,11 @@ namespace SnakeGame
 
         }
 
+        private void CloseScreen_Load(object sender, EventArgs e)
+        {
+
+            CenterToScreen();
+
+        }
     }
 }

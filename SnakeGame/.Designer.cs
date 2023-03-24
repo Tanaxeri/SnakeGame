@@ -37,6 +37,7 @@
             // 
             // Exitbtn
             // 
+            this.Exitbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Exitbtn.Location = new System.Drawing.Point(481, 468);
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(232, 77);
@@ -47,6 +48,7 @@
             // 
             // Leaderboardbtn
             // 
+            this.Leaderboardbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Leaderboardbtn.Location = new System.Drawing.Point(481, 346);
             this.Leaderboardbtn.Name = "Leaderboardbtn";
             this.Leaderboardbtn.Size = new System.Drawing.Size(232, 77);
@@ -57,6 +59,7 @@
             // 
             // Playbtn
             // 
+            this.Playbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Playbtn.Location = new System.Drawing.Point(481, 224);
             this.Playbtn.Name = "Playbtn";
             this.Playbtn.Size = new System.Drawing.Size(232, 77);
@@ -67,6 +70,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(397, 56);
@@ -92,6 +96,7 @@
             this.Text = "Snake Game";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartScreen_FormClosing);
+            this.Load += new System.EventHandler(this.StartScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

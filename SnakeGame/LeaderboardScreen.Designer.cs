@@ -36,6 +36,7 @@
             // 
             // ReturntoTSbtn
             // 
+            this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReturntoTSbtn.Location = new System.Drawing.Point(533, 511);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
             this.ReturntoTSbtn.Size = new System.Drawing.Size(160, 65);
@@ -46,6 +47,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(393, 30);
@@ -56,6 +58,7 @@
             // 
             // Lblbl
             // 
+            this.Lblbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lblbl.AutoSize = true;
             this.Lblbl.Location = new System.Drawing.Point(402, 139);
             this.Lblbl.Name = "Lblbl";

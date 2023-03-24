@@ -56,5 +56,12 @@ namespace SnakeGame
             this.Close();
 
         }
+
+        private void NameDialog_Load(object sender, EventArgs e)
+        {
+
+            CenterToScreen();
+
+        }
     }
 }

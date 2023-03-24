@@ -36,6 +36,7 @@
             // 
             // txtPlayerName
             // 
+            this.txtPlayerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPlayerName.Location = new System.Drawing.Point(198, 146);
             this.txtPlayerName.Name = "txtPlayerName";
             this.txtPlayerName.Size = new System.Drawing.Size(324, 20);
@@ -43,6 +44,7 @@
             // 
             // Okbtn
             // 
+            this.Okbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Okbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Okbtn.Location = new System.Drawing.Point(493, 304);
             this.Okbtn.Name = "Okbtn";
@@ -54,6 +56,7 @@
             // 
             // Cancelbtn
             // 
+            this.Cancelbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Cancelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelbtn.Location = new System.Drawing.Point(107, 304);
             this.Cancelbtn.Name = "Cancelbtn";
@@ -65,6 +68,7 @@
             // 
             // Titlelbl
             // 
+            this.Titlelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Titlelbl.AutoSize = true;
             this.Titlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titlelbl.Location = new System.Drawing.Point(156, 48);
@@ -88,6 +92,7 @@
             this.Name = "NameDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enter name";
+            this.Load += new System.EventHandler(this.NameDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

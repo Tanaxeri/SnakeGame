@@ -18,7 +18,17 @@ namespace SnakeGame
         public LeaderboardScreen()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
             this.VisibleChanged += LeaderboardScreen_VisibleChanged;
+        }
+
+        private void LeaderboardScreen_Load(object sender, EventArgs e)
+        {
+
+            CenterToScreen();
+            string leaderboardText = Program.data.DataContent;//Program.database.GetLeaderboard();
+            Lblbl.Text = leaderboardText;
+
         }
 
         private void LeaderboardScreen_VisibleChanged(object sender, EventArgs e)
@@ -27,15 +37,7 @@ namespace SnakeGame
             {
                 userConfirmedClosing = false; // reset userConfirmedClosing flag
             }
-        }
-
-        private void LeaderboardScreen_Load(object sender, EventArgs e)
-        {
-
-            string leaderboardText = Program.data.DataContent;//Program.database.GetLeaderboard();
-            Lblbl.Text = leaderboardText;
-
-        }
+        }        
 
         private void ReturntoTSbtn_Click(object sender, EventArgs e)
         {

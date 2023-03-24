@@ -95,12 +95,12 @@ namespace SnakeGame
         public void Mentes(string playerName, int score, int level)
         {
             string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "snakegamedb.csv");
-            string backupFilename = "Backup_" + DateTime.Now.ToString("MM.dd.yyyy_HH.mm.ss") + ".csv";
+            //string backupFilename = "Backup_" + DateTime.Now.ToString("MM.dd.yyyy_HH.mm.ss") + ".csv";
 
             try
             {
                 // Make a backup of the original file
-                File.Copy(filename, backupFilename, true);
+                //File.Copy(filename, backupFilename, true);
 
                 // Generate the data to be saved
                 DateTime timestamp = DateTime.Now;

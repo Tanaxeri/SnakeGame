@@ -67,6 +67,7 @@ namespace SnakeGame
         private void GameOverScreen_Load(object sender, EventArgs e)
         {
 
+            CenterToScreen();
             FinalScorelbl.Text = "Final Score: " + Program.gamescreen.highScore;
             FinalLevellbl.Text = "Final Level: " + Program.gamescreen.Finallevel;
 

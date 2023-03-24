@@ -19,7 +19,15 @@ namespace SnakeGame
         public StartScreen()
         {
             InitializeComponent();
+            this.AutoScaleMode = AutoScaleMode.None;
             this.VisibleChanged += StartScreen_VisibleChanged;
+        }
+
+        private void StartScreen_Load(object sender, EventArgs e)
+        {
+
+            CenterToScreen();
+
         }
 
         private void StartScreen_VisibleChanged(object sender, EventArgs e)
@@ -92,7 +100,6 @@ namespace SnakeGame
                 }
             }
         }
-
-
+       
     }
 }
