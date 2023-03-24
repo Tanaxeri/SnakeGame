@@ -122,11 +122,11 @@ namespace SnakeGame
             }
             catch (IOException ex)
             {
-                MessageBox.Show(ex.Message + "\nA mentés sikertelen!");
+                MessageBox.Show(ex.Message + "\nCouldn't save!");
                 return;
             }
 
-            MessageBox.Show("Az adatok mentése sikeres!");
+            MessageBox.Show("Saved!");
 
         }
     }
