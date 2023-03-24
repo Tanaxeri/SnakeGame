@@ -22,7 +22,7 @@
         "Entry"
         {
         "MsmKey" = "8:_018A4878E697EDB0E7A6C3F29B18A3B5"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -34,7 +34,7 @@
         "Entry"
         {
         "MsmKey" = "8:_18B9207593254FD6295D71F21AE8EEC5"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_1E1C51FF1B258CAEA58243ACF74ABDC4"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,13 +70,19 @@
         "Entry"
         {
         "MsmKey" = "8:_645CA627AC3DA29798EDA263887AA5AF"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_68022AA0DF1657B1DD93E79F569BFC95"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,7 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_9EAF14A516FC6FE1A192007330552F8B"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,7 +106,7 @@
         "Entry"
         {
         "MsmKey" = "8:_A82A72931B7F0103892D050DEA4AA3E4"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -124,7 +130,7 @@
         "Entry"
         {
         "MsmKey" = "8:_AFF4A9F97C9BE1ACD98209C686A586D2"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -148,7 +154,7 @@
         "Entry"
         {
         "MsmKey" = "8:_B60C51DB350F25E9C66A5819C0F134BB"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -160,7 +166,7 @@
         "Entry"
         {
         "MsmKey" = "8:_C730044127D89B60B657F06E609574E7"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -178,13 +184,7 @@
         "Entry"
         {
         "MsmKey" = "8:_C8ADACE66076A2DA00D22794BC9C9999"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -196,7 +196,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+        "OwnerKey" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -336,59 +336,45 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_18C6FFA487F64B219E6921CC6E8266C6"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_95499FD5A92647BCB80E1E974F229192"
             {
             "Name" = "8:Primary output from SnakeGame (Active)"
             "Condition" = "8:"
-            "Object" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+            "Object" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
             "FileType" = "3:2"
             "InstallAction" = "3:4"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_2835B460_C0CD_4F65_8B87_F8B529DD2892"
+            "Identifier" = "8:_57B1E7CA_3708_449C_BE7F_AD93A0B6A0CF"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_481E173ADA4A4CED99C770012E4A2D48"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_CF363A09F5E84EC8A16005856EEC9F0E"
             {
             "Name" = "8:Primary output from SnakeGame (Active)"
             "Condition" = "8:"
-            "Object" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
-            "FileType" = "3:2"
-            "InstallAction" = "3:2"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_CE0454FB_4818_4C39_8E75_4F4A6E9C1D82"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_63280B3F974D4A6996E11FC70B255AF2"
-            {
-            "Name" = "8:Primary output from SnakeGame (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+            "Object" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_76F111FA_C20E_41DB_B1D8_0D9D57E9DBA9"
+            "Identifier" = "8:_B268F565_DED4_433E_A12B_F4E002BBC81D"
             "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
+            "CustomActionData" = "8:/ALLUSERS=[ALLUSERS] /DESKTOP_SHORTCUT=[DESKTOP_SHORTCUT] /QUICKLAUNCH_SHORTCUT=[QUICKLAUNCH_SHORTCUT]"
             }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_F37EA1571BD745D6AD5FBCCAF13824B4"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_F50BAC6F9346430CADA3A47E9FDE2144"
             {
             "Name" = "8:Primary output from SnakeGame (Active)"
             "Condition" = "8:"
-            "Object" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+            "Object" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
             "FileType" = "3:2"
             "InstallAction" = "3:3"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_715207DA_3199_4658_B4AB_613E0EA384CC"
+            "Identifier" = "8:_98FA834B_66BA_45A9_8F4D_BD649F84F74C"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -864,7 +850,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Snake"
         "ProductCode" = "8:{E4FC261D-3C22-49A7-B140-CF24C0DC13C2}"
-        "PackageCode" = "8:{1507BD9D-A348-41B2-9BA2-A15F1B70A3C7}"
+        "PackageCode" = "8:{125EBCA7-94BD-4EC8-85CD-EB4717D013D1}"
         "UpgradeCode" = "8:{EB2B2C0F-20F3-4674-9361-B9190BA35683}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -984,7 +970,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1167351A467647F391D692740AD6F1DB"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_07CDE8277B8846788210C23C0566599D"
             {
             "Name" = "8:Snake"
             "Arguments" = "8:"
@@ -992,24 +978,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
+            "Target" = "8:_9A370E6BC11846F3B99736F2911D5B7E"
             "Folder" = "8:_E926A256BFB243DEB63453671D1918D1"
             "WorkingFolder" = "8:_0AFECCC2BB9249EE9D0AF443722F172E"
-            "Icon" = "8:_0501CA10919848D4827B3609C0CFD545"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FC1E8A2CF2BF4D80878E80986A9158FA"
-            {
-            "Name" = "8:Snake"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_D87A9E586B9D422EB7DEAA9641BD003E"
-            "Folder" = "8:_C156B4B984414D57BCF6A61C1D568E48"
-            "WorkingFolder" = "8:_0AFECCC2BB9249EE9D0AF443722F172E"
-            "Icon" = "8:_0501CA10919848D4827B3609C0CFD545"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -1079,13 +1051,13 @@
                             }
                         }
                     }
-                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_925FA4DDA4E741FDAC578D3A1B8AA755"
+                    "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_AD0A992C87C84795A8BA8EDB4061F2A1"
                     {
-                    "Sequence" = "3:120"
-                    "DisplayName" = "8:Checkboxes   (A)"
+                    "Sequence" = "3:300"
+                    "DisplayName" = "8:Checkboxes   (C)"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
-                    "SourcePath" = "8:<VsdDialogDir>\\VsdCustomCheck1Dlg.wid"
+                    "SourcePath" = "8:<VsdDialogDir>\\VsdCustomCheck3Dlg.wid"
                         "Properties"
                         {
                             "BannerBitmap"
@@ -1108,7 +1080,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:Create Shortcuts"
+                            "Value" = "8:Shortcuts"
                             "DefaultValue" = "8:#1214"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1121,7 +1093,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:Create shortcuts for this application"
+                            "Value" = "8:Setup can create shortcuts to [ProductName] on your Desktop and in the Quick Launch bar. Would you like Setup to create the shortcuts?"
                             "DefaultValue" = "8:#1215"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1134,7 +1106,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:Create Desktop Shortcut"
+                            "Value" = "8:Yes, I would like to create the [ProductName] shortcut on the Desktop"
                             "DefaultValue" = "8:#1234"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1147,8 +1119,8 @@
                             "ContextData" = "8:Public"
                             "Attributes" = "3:2"
                             "Setting" = "3:2"
-                            "Value" = "8:CREATESHORTCUT"
-                            "DefaultValue" = "8:CHECKBOXA1"
+                            "Value" = "8:DESKTOP_SHORTCUT"
+                            "DefaultValue" = "8:CHECKBOXC1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Checkbox1Value"
@@ -1160,7 +1132,7 @@
                             "ContextData" = "8:Unchecked=;Checked=1"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:"
+                            "Value" = "8:1"
                             "DefaultValue" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1186,7 +1158,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:Create Start Menu Shortcut"
+                            "Value" = "8:Yes, I would like to create the [ProductName] shortcut in the Quick Launch bar."
                             "DefaultValue" = "8:#1235"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1199,8 +1171,8 @@
                             "ContextData" = "8:Public"
                             "Attributes" = "3:2"
                             "Setting" = "3:2"
-                            "Value" = "8:CREATESTARTMENUSHORTCUT"
-                            "DefaultValue" = "8:CHECKBOXA2"
+                            "Value" = "8:QUICKLAUNCH_SHORTCUT"
+                            "DefaultValue" = "8:CHECKBOXC2"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Checkbox2Value"
@@ -1212,7 +1184,7 @@
                             "ContextData" = "8:Unchecked=;Checked=1"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:"
+                            "Value" = "8:1"
                             "DefaultValue" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -1251,8 +1223,8 @@
                             "ContextData" = "8:Public"
                             "Attributes" = "3:2"
                             "Setting" = "3:2"
-                            "Value" = "8:CHECKBOXA3"
-                            "DefaultValue" = "8:CHECKBOXA3"
+                            "Value" = "8:CHECKBOXC3"
+                            "DefaultValue" = "8:CHECKBOXC3"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Checkbox3Value"
@@ -1303,8 +1275,8 @@
                             "ContextData" = "8:Public"
                             "Attributes" = "3:2"
                             "Setting" = "3:2"
-                            "Value" = "8:CHECKBOXA4"
-                            "DefaultValue" = "8:CHECKBOXA4"
+                            "Value" = "8:CHECKBOXC4"
+                            "DefaultValue" = "8:CHECKBOXC4"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Checkbox4Value"
@@ -1337,7 +1309,7 @@
                     }
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_E3473019DBF547E0933309C39F9547B2"
                     {
-                    "Sequence" = "3:110"
+                    "Sequence" = "3:100"
                     "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
@@ -1667,9 +1639,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D87A9E586B9D422EB7DEAA9641BD003E"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9A370E6BC11846F3B99736F2911D5B7E"
             {
-            "SourcePath" = "8:..\\SnakeGame\\obj\\Debug\\SnakeGame.exe"
+            "SourcePath" = "8:..\\SnakeGame\\obj\\Release\\SnakeGame.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0AFECCC2BB9249EE9D0AF443722F172E"
