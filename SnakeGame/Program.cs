@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,7 +28,7 @@ namespace SnakeGame
             leaderboardscreen = new LeaderboardScreen();
             pausescreen = new PauseScreen();
             database = new Database("localhost", "root", "", "snakegamedb");
-            data = new Data("snakegamedb.csv");
+            data = new Data(Path.Combine(Application.StartupPath, "snakegamedb.csv"));
 
             startscreen.Show();
 

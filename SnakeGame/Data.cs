@@ -23,9 +23,11 @@ namespace SnakeGame
 
         public Data(string forras)
         {
+            
             try
             {
-                using (var reader = new StreamReader(forras))
+                var csvPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, forras);
+                using (var reader = new StreamReader(csvPath))
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
 
@@ -92,7 +94,7 @@ namespace SnakeGame
 
         public void Mentes(string playerName, int score, int level)
         {
-            string filename = "snakegamedb.csv";
+            string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "snakegamedb.csv");
             string backupFilename = "Backup_" + DateTime.Now.ToString("MM.dd.yyyy_HH.mm.ss") + ".csv";
 
             try
