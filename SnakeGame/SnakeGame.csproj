@@ -215,6 +215,9 @@
     <None Include="SNAKE ALKALMAZÁS VÉDŐ.pptx" />
     <None Include="Snake alkalmazás.docx" />
     <None Include="Snake alkalmazás.pdf" />
+    <Resource Include="kepek\SnakeGame background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="snakegamedb.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

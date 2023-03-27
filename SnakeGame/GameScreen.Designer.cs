@@ -41,6 +41,7 @@
             // 
             this.Scorelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Scorelbl.AutoSize = true;
+            this.Scorelbl.BackColor = System.Drawing.Color.Transparent;
             this.Scorelbl.Location = new System.Drawing.Point(1174, 6);
             this.Scorelbl.Name = "Scorelbl";
             this.Scorelbl.Size = new System.Drawing.Size(98, 21);
@@ -54,7 +55,7 @@
             // gamezone
             // 
             this.gamezone.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gamezone.BackColor = System.Drawing.Color.DarkGray;
+            this.gamezone.BackColor = System.Drawing.Color.Gray;
             this.gamezone.Location = new System.Drawing.Point(31, 30);
             this.gamezone.Name = "gamezone";
             this.gamezone.Size = new System.Drawing.Size(1234, 601);
@@ -66,6 +67,7 @@
             // 
             this.Levellbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Levellbl.AutoSize = true;
+            this.Levellbl.BackColor = System.Drawing.Color.Transparent;
             this.Levellbl.Location = new System.Drawing.Point(12, 6);
             this.Levellbl.Name = "Levellbl";
             this.Levellbl.Size = new System.Drawing.Size(87, 21);
@@ -78,6 +80,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::SnakeGame.Properties.Resources.SnakeGame_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.Levellbl);
             this.Controls.Add(this.gamezone);

@@ -38,40 +38,44 @@
             // Exitbtn
             // 
             this.Exitbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Exitbtn.BackColor = System.Drawing.Color.Transparent;
             this.Exitbtn.Location = new System.Drawing.Point(481, 468);
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(232, 77);
             this.Exitbtn.TabIndex = 1;
             this.Exitbtn.Text = "Exit";
-            this.Exitbtn.UseVisualStyleBackColor = true;
+            this.Exitbtn.UseVisualStyleBackColor = false;
             this.Exitbtn.Click += new System.EventHandler(this.Exitbtn_Click);
             // 
             // Leaderboardbtn
             // 
             this.Leaderboardbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Leaderboardbtn.BackColor = System.Drawing.Color.Transparent;
             this.Leaderboardbtn.Location = new System.Drawing.Point(481, 346);
             this.Leaderboardbtn.Name = "Leaderboardbtn";
             this.Leaderboardbtn.Size = new System.Drawing.Size(232, 77);
             this.Leaderboardbtn.TabIndex = 2;
             this.Leaderboardbtn.Text = "Leaderboard";
-            this.Leaderboardbtn.UseVisualStyleBackColor = true;
+            this.Leaderboardbtn.UseVisualStyleBackColor = false;
             this.Leaderboardbtn.Click += new System.EventHandler(this.Leaderboardbtn_Click);
             // 
             // Playbtn
             // 
             this.Playbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Playbtn.BackColor = System.Drawing.Color.Transparent;
             this.Playbtn.Location = new System.Drawing.Point(481, 224);
             this.Playbtn.Name = "Playbtn";
             this.Playbtn.Size = new System.Drawing.Size(232, 77);
             this.Playbtn.TabIndex = 3;
             this.Playbtn.Text = "Play";
-            this.Playbtn.UseVisualStyleBackColor = true;
+            this.Playbtn.UseVisualStyleBackColor = false;
             this.Playbtn.Click += new System.EventHandler(this.Playbtn_Click);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(397, 56);
             this.label1.Name = "label1";
@@ -83,6 +87,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SnakeGame.Properties.Resources.SnakeGame_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Playbtn);

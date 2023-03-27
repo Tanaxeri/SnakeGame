@@ -37,18 +37,21 @@
             // ReturntoTSbtn
             // 
             this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ReturntoTSbtn.BackColor = System.Drawing.Color.Transparent;
             this.ReturntoTSbtn.Location = new System.Drawing.Point(533, 511);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
             this.ReturntoTSbtn.Size = new System.Drawing.Size(160, 65);
             this.ReturntoTSbtn.TabIndex = 6;
             this.ReturntoTSbtn.Text = "Return to Title Screen";
-            this.ReturntoTSbtn.UseVisualStyleBackColor = true;
+            this.ReturntoTSbtn.UseVisualStyleBackColor = false;
             this.ReturntoTSbtn.Click += new System.EventHandler(this.ReturntoTSbtn_Click);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(393, 30);
             this.label1.Name = "label1";
@@ -60,6 +63,8 @@
             // 
             this.Lblbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lblbl.AutoSize = true;
+            this.Lblbl.BackColor = System.Drawing.Color.Transparent;
+            this.Lblbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Lblbl.Location = new System.Drawing.Point(402, 139);
             this.Lblbl.Name = "Lblbl";
             this.Lblbl.Size = new System.Drawing.Size(0, 21);
@@ -69,6 +74,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SnakeGame.Properties.Resources.SnakeGame_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1284, 661);
             this.Controls.Add(this.Lblbl);
             this.Controls.Add(this.label1);

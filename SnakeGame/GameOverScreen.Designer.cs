@@ -41,6 +41,8 @@
             // 
             this.FinalScorelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FinalScorelbl.AutoSize = true;
+            this.FinalScorelbl.BackColor = System.Drawing.Color.Transparent;
+            this.FinalScorelbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FinalScorelbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalScorelbl.Location = new System.Drawing.Point(265, 167);
             this.FinalScorelbl.Name = "FinalScorelbl";
@@ -52,6 +54,8 @@
             // 
             this.FinalLevellbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FinalLevellbl.AutoSize = true;
+            this.FinalLevellbl.BackColor = System.Drawing.Color.Transparent;
+            this.FinalLevellbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FinalLevellbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FinalLevellbl.Location = new System.Drawing.Point(597, 167);
             this.FinalLevellbl.Name = "FinalLevellbl";
@@ -62,19 +66,22 @@
             // Savebtn
             // 
             this.Savebtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Savebtn.BackColor = System.Drawing.Color.Transparent;
             this.Savebtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Savebtn.Location = new System.Drawing.Point(64, 330);
             this.Savebtn.Name = "Savebtn";
             this.Savebtn.Size = new System.Drawing.Size(141, 65);
             this.Savebtn.TabIndex = 2;
             this.Savebtn.Text = "Save";
-            this.Savebtn.UseVisualStyleBackColor = true;
+            this.Savebtn.UseVisualStyleBackColor = false;
             this.Savebtn.Click += new System.EventHandler(this.Savebtn_Click);
             // 
             // GameOverlbl
             // 
             this.GameOverlbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GameOverlbl.AutoSize = true;
+            this.GameOverlbl.BackColor = System.Drawing.Color.Transparent;
+            this.GameOverlbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GameOverlbl.Font = new System.Drawing.Font("Courier New", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameOverlbl.Location = new System.Drawing.Point(326, 33);
             this.GameOverlbl.Name = "GameOverlbl";
@@ -85,31 +92,35 @@
             // PlayAgainbtn
             // 
             this.PlayAgainbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PlayAgainbtn.BackColor = System.Drawing.Color.Transparent;
             this.PlayAgainbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayAgainbtn.Location = new System.Drawing.Point(432, 330);
             this.PlayAgainbtn.Name = "PlayAgainbtn";
             this.PlayAgainbtn.Size = new System.Drawing.Size(141, 65);
             this.PlayAgainbtn.TabIndex = 4;
             this.PlayAgainbtn.Text = "Play Again";
-            this.PlayAgainbtn.UseVisualStyleBackColor = true;
+            this.PlayAgainbtn.UseVisualStyleBackColor = false;
             this.PlayAgainbtn.Click += new System.EventHandler(this.PlayAgainbtn_Click);
             // 
             // ReturntoTSbtn
             // 
             this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ReturntoTSbtn.BackColor = System.Drawing.Color.Transparent;
             this.ReturntoTSbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturntoTSbtn.Location = new System.Drawing.Point(767, 330);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
             this.ReturntoTSbtn.Size = new System.Drawing.Size(160, 65);
             this.ReturntoTSbtn.TabIndex = 5;
             this.ReturntoTSbtn.Text = "Return to Title Screen";
-            this.ReturntoTSbtn.UseVisualStyleBackColor = true;
+            this.ReturntoTSbtn.UseVisualStyleBackColor = false;
             this.ReturntoTSbtn.Click += new System.EventHandler(this.ReturntoTSbtn_Click);
             // 
             // GameOverScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SnakeGame.Properties.Resources.SnakeGame_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1084, 561);
             this.Controls.Add(this.ReturntoTSbtn);
             this.Controls.Add(this.PlayAgainbtn);

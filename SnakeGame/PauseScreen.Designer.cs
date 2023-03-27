@@ -38,6 +38,8 @@
             // 
             this.Titlelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Titlelbl.AutoSize = true;
+            this.Titlelbl.BackColor = System.Drawing.Color.Transparent;
+            this.Titlelbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Titlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titlelbl.Location = new System.Drawing.Point(258, 28);
             this.Titlelbl.Name = "Titlelbl";
@@ -48,43 +50,48 @@
             // Restartbtn
             // 
             this.Restartbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Restartbtn.BackColor = System.Drawing.Color.Transparent;
             this.Restartbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Restartbtn.Location = new System.Drawing.Point(238, 228);
             this.Restartbtn.Name = "Restartbtn";
             this.Restartbtn.Size = new System.Drawing.Size(160, 65);
             this.Restartbtn.TabIndex = 5;
             this.Restartbtn.Text = "Restart";
-            this.Restartbtn.UseVisualStyleBackColor = true;
+            this.Restartbtn.UseVisualStyleBackColor = false;
             this.Restartbtn.Click += new System.EventHandler(this.Restartbtn_Click);
             // 
             // ReturntoTSbtn
             // 
             this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ReturntoTSbtn.BackColor = System.Drawing.Color.Transparent;
             this.ReturntoTSbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturntoTSbtn.Location = new System.Drawing.Point(238, 341);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
             this.ReturntoTSbtn.Size = new System.Drawing.Size(160, 65);
             this.ReturntoTSbtn.TabIndex = 6;
             this.ReturntoTSbtn.Text = "Return to Title Screen";
-            this.ReturntoTSbtn.UseVisualStyleBackColor = true;
+            this.ReturntoTSbtn.UseVisualStyleBackColor = false;
             this.ReturntoTSbtn.Click += new System.EventHandler(this.ReturntoTSbtn_Click);
             // 
             // Returnbtn
             // 
             this.Returnbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Returnbtn.BackColor = System.Drawing.Color.Transparent;
             this.Returnbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Returnbtn.Location = new System.Drawing.Point(238, 116);
             this.Returnbtn.Name = "Returnbtn";
             this.Returnbtn.Size = new System.Drawing.Size(160, 65);
             this.Returnbtn.TabIndex = 7;
             this.Returnbtn.Text = "Return";
-            this.Returnbtn.UseVisualStyleBackColor = true;
+            this.Returnbtn.UseVisualStyleBackColor = false;
             this.Returnbtn.Click += new System.EventHandler(this.Returnbtn_Click);
             // 
             // PauseScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SnakeGame.Properties.Resources.SnakeGame_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Returnbtn);
             this.Controls.Add(this.ReturntoTSbtn);

@@ -37,6 +37,8 @@
             // 
             this.Titlelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Titlelbl.AutoSize = true;
+            this.Titlelbl.BackColor = System.Drawing.Color.Transparent;
+            this.Titlelbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Titlelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titlelbl.Location = new System.Drawing.Point(21, 66);
             this.Titlelbl.Name = "Titlelbl";
@@ -47,31 +49,35 @@
             // Nobtn
             // 
             this.Nobtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Nobtn.BackColor = System.Drawing.Color.Transparent;
             this.Nobtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nobtn.Location = new System.Drawing.Point(49, 263);
             this.Nobtn.Name = "Nobtn";
             this.Nobtn.Size = new System.Drawing.Size(134, 66);
             this.Nobtn.TabIndex = 5;
             this.Nobtn.Text = "No";
-            this.Nobtn.UseVisualStyleBackColor = true;
+            this.Nobtn.UseVisualStyleBackColor = false;
             this.Nobtn.Click += new System.EventHandler(this.Nobtn_Click);
             // 
             // Yesbtn
             // 
             this.Yesbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Yesbtn.BackColor = System.Drawing.Color.Transparent;
             this.Yesbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Yesbtn.Location = new System.Drawing.Point(545, 263);
             this.Yesbtn.Name = "Yesbtn";
             this.Yesbtn.Size = new System.Drawing.Size(134, 66);
             this.Yesbtn.TabIndex = 6;
             this.Yesbtn.Text = "Yes";
-            this.Yesbtn.UseVisualStyleBackColor = true;
+            this.Yesbtn.UseVisualStyleBackColor = false;
             this.Yesbtn.Click += new System.EventHandler(this.Yesbtn_Click);
             // 
             // CloseScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SnakeGame.Properties.Resources.SnakeGame_background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Yesbtn);
             this.Controls.Add(this.Nobtn);
