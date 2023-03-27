@@ -38,6 +38,7 @@
             // 
             this.ReturntoTSbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ReturntoTSbtn.BackColor = System.Drawing.Color.Transparent;
+            this.ReturntoTSbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturntoTSbtn.Location = new System.Drawing.Point(533, 511);
             this.ReturntoTSbtn.Name = "ReturntoTSbtn";
             this.ReturntoTSbtn.Size = new System.Drawing.Size(160, 65);
@@ -65,9 +66,10 @@
             this.Lblbl.AutoSize = true;
             this.Lblbl.BackColor = System.Drawing.Color.Transparent;
             this.Lblbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lblbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lblbl.Location = new System.Drawing.Point(402, 139);
             this.Lblbl.Name = "Lblbl";
-            this.Lblbl.Size = new System.Drawing.Size(0, 21);
+            this.Lblbl.Size = new System.Drawing.Size(0, 22);
             this.Lblbl.TabIndex = 8;
             // 
             // LeaderboardScreen

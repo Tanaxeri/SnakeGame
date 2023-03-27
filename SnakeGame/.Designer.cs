@@ -39,6 +39,7 @@
             // 
             this.Exitbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Exitbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Exitbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exitbtn.Location = new System.Drawing.Point(481, 468);
             this.Exitbtn.Name = "Exitbtn";
             this.Exitbtn.Size = new System.Drawing.Size(232, 77);
@@ -51,6 +52,7 @@
             // 
             this.Leaderboardbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Leaderboardbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Leaderboardbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Leaderboardbtn.Location = new System.Drawing.Point(481, 346);
             this.Leaderboardbtn.Name = "Leaderboardbtn";
             this.Leaderboardbtn.Size = new System.Drawing.Size(232, 77);
@@ -63,6 +65,7 @@
             // 
             this.Playbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Playbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Playbtn.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Playbtn.Location = new System.Drawing.Point(481, 224);
             this.Playbtn.Name = "Playbtn";
             this.Playbtn.Size = new System.Drawing.Size(232, 77);

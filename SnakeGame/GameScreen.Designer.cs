@@ -42,9 +42,10 @@
             this.Scorelbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Scorelbl.AutoSize = true;
             this.Scorelbl.BackColor = System.Drawing.Color.Transparent;
+            this.Scorelbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scorelbl.Location = new System.Drawing.Point(1174, 6);
             this.Scorelbl.Name = "Scorelbl";
-            this.Scorelbl.Size = new System.Drawing.Size(98, 21);
+            this.Scorelbl.Size = new System.Drawing.Size(98, 22);
             this.Scorelbl.TabIndex = 0;
             this.Scorelbl.Text = "Score: 0";
             // 
@@ -68,9 +69,10 @@
             this.Levellbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Levellbl.AutoSize = true;
             this.Levellbl.BackColor = System.Drawing.Color.Transparent;
+            this.Levellbl.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Levellbl.Location = new System.Drawing.Point(12, 6);
             this.Levellbl.Name = "Levellbl";
-            this.Levellbl.Size = new System.Drawing.Size(87, 21);
+            this.Levellbl.Size = new System.Drawing.Size(87, 22);
             this.Levellbl.TabIndex = 2;
             this.Levellbl.Text = "Level 0";
             // 
